@@ -1,0 +1,533 @@
+
+
+$main-font:                     'Raleway', sans-serif 
+$nav-font-color:                rgba(255, 255, 255, 0.75)
+$secondary-font:                'Open Sans', sans-serif
+$hero-font-color:               white 
+
+$nav-height:                    100px                    //normal height
+$nav-height-min:                50px                     //height on mobile devices <992px
+
+$button-color:                  #e74545
+$hero-layer-color:              rgba(43,46,74, 0.9)     //color of layer in hero/jumbotron
+$hero-bg:                       url('../img/bg1.jpeg') 50% 50%  //image on hero's bg
+// $hero-bg:                       url('../img/bg2.jpeg') 0 70%  //image on hero's bg
+
+$features-tile-color:           #e74545
+
+$clients-font:                 'Cardo', serif
+
+$footer-color:                  #393d63
+$footer-font-color:             $nav-font-color   
+$footer-main-color:             $hero-font-color 
+$credits-bg-color:              #313353
+$credits-main-font-color:       $nav-font-color
+$credits-add-font-color:        $hero-font-color
+
+=square($width)
+    height:         $width
+    width:          $width
+    line-height:    $width
+
+@mixin boldedUpperCaseText($size) 
+    font-size: $size
+    font-weight: 700
+    text-transform: uppercase
+
+
+@mixin clearfix()
+    &:after,
+    &:before
+        display: table
+        content: ""
+        clear: both
+
+.row
+    @include clearfix
+
+body
+    font-family: $main-font
+
+header
+    &::after
+        content: ''
+        background: $hero-bg no-repeat
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        background-attachment: fixed
+        background-size: cover
+        
+
+.layer
+    background-color: $hero-layer-color
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    height: 100vh
+    width: 100%
+
+.navbar
+    top: ($nav-height - 50px)/2
+    left: 0
+    z-index: 2
+    right: 0
+    .bottom-line
+        border-bottom: 1px solid rgba(255,255,255, .15)
+        margin-top: ($nav-height - 50px)/2
+
+.navbar-nav
+    >li
+        >a
+            padding-top: 15px
+            padding-bottom: 15px
+            color: $nav-font-color
+            @include boldedUpperCaseText(13px)
+            
+            transition-property: color, background, padding, margin, text-shadow
+            transition-duration: .3s, .3s, .3s, .3s, .3s
+            transition-delay: .0s, .3s, .3s, .3s, .0s
+            &:hover
+                background-color: rgba(238, 238, 238, 0.15)
+                color: white
+                transition-property: color, background, padding, margin, text-shadow
+                transition-duration: .3s, .3s, .3s, .3s, .3s
+                transition-delay: .3s, .0s, 0s, 0s, .3s
+                padding-bottom: 20px
+                margin-top: -5px
+                text-shadow: 2px 2px 4px #000
+
+.navbar-toggle
+    background-color: rgba(255, 255, 255, 0.15)
+    span 
+        background-color: $nav-font-color
+
+.jumbotron
+    // background: $hero-bg
+    height: 100vh
+    width: 100%
+    // background-size: cover
+    position: relative
+    padding: 0
+    margin-bottom: 0
+    
+    .wraper
+        position: absolute
+        z-index: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        align-content: center
+        // height: calc(100vh - #{$nav-height})
+        height: 100vh
+        width: 100%
+        color: $hero-font-color
+        text-align: center
+        h1
+            @include boldedUpperCaseText(65px)
+            font-family: $secondary-font
+            flex: 0 1 auto
+            max-width: 900px
+            margin-top: $nav-height
+            padding-left: 15px
+            padding-right: 15px
+        p
+            font-size: 22px
+            
+            max-width: 875px
+            font-weight: 300
+            flex: 0 1 auto
+            padding-left: 15px
+            padding-right: 15px
+        a
+            margin-top: 80px
+            padding: 15px 50px    
+
+.btn 
+    text-transform: uppercase
+    padding: 10px 25px
+    background-color: $button-color
+    border: 0
+    border-radius: 2px
+    font-size: 13px
+    
+    font-weight: 500
+    color: $nav-font-color
+    transition: .3s
+    &:hover
+        background-color: adjust-color($button-color, $red: -32, $green: -32, $blue: -32)
+        color: $hero-font-color 
+        font-weight: 600
+
+.features 
+    >div
+        margin-bottom: 20px
+        margin-top: 70px
+        >div
+            text-align: center
+            font-size: 13px
+            font-family: 
+            padding: 40px 60px
+            &:hover
+                img 
+                    filter: hue-rotate(-110deg) opacity(0.9) saturate(148%)
+                    transform: rotateY(360deg)
+                    transition: transform 1s ease-in, filter .3s .2s ease-in
+    img
+        transition: filter .4s ease-in
+    h3
+        text-transform: uppercase
+        font-weight: 600    
+    p   
+        &:first-of-type
+            @include boldedUpperCaseText(13px)
+            margin-top: 30px
+.gallery 
+    padding: 70px 0 0 0
+    .row
+        margin-left: 0
+        margin-right: 0
+    .wrapper
+        padding: 0   
+        text-align: center 
+        height: 350px
+        padding: 1px
+    .tile
+        height: 100%
+        display: block
+        position: relative
+        overflow: hidden
+
+        &:after
+            content: ""
+            position: absolute
+            display: block
+            width: 100%
+            height: 100%
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            visibility: hidden
+            opacity: 0
+            transition: visibility .5s, opacity .5s
+            background-color: rgba(231, 69, 69, 0.9)
+        &:hover, &:focus
+            &:after 
+                visibility: visible
+                opacity: 1
+            .tile-media
+                transform: scale(1.2)
+            .tile-content
+                visibility: visible
+                opacity: 1    
+    .tile-media
+        width: 100%
+        height: 100%
+        object-fit: cover
+        display: block
+        transition: transform .5s
+        transform: scale(1)
+        backface-visibility: hidden
+
+    .tile-content       
+        top: 50%
+        right: 0
+        left: 0
+        position: absolute
+        z-index: 1
+        visibility: hidden
+        opacity: 0
+        color: #ffffff
+        font-size: 14px
+        transition: visibility .5s, opacity .5s
+        transform: translateY(-50%)
+        backface-visibility: hidden
+        h3
+            @include boldedUpperCaseText(16px)
+
+.team
+    padding-top: 100px
+    margin-bottom: 20px
+    .col 
+        padding-bottom: 40px
+    img
+        // height: 250px
+        width: 100%           
+        // For browsers that do not support gradients
+        background: rgb(199, 199, 199) 
+        background: radial-gradient(#fffafa, #b8bcc3)
+    h2  
+        font-weight: 400
+        font-size: 22px
+    h3
+        font-size: 13px
+        text-transform: uppercase
+        color: $button-color
+    .fa 
+        +square(40px)
+        margin-right: 5px
+        border: 1px solid #c5c9cb
+        color: #c5c9cb
+        font-size: 22px
+        text-align: center
+        margin-top: 25px
+        transition: .25s
+        &:hover
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, .6)
+        &.fa-facebook
+            &:hover
+                color: #3b5998
+        &.fa-twitter
+            &:hover
+                color: #55acee
+        &.fa-linkedin-square
+            &:hover
+                color: #007bb5
+        // &.fa-facebook
+        //     &:hover
+        //         background-color: #3b5998
+        //         color: #fff
+        // &.fa-twitter
+        //     &:hover
+        //         background-color: #55acee
+        //         color: #fff
+        // &.fa-linkedin-square
+        //     &:hover
+        //         background-color: #007bb5
+        //         color: #fff
+
+
+.clients
+    
+    padding: 80px 0 0 0
+.carousel
+    background-color: #533549
+
+.carousel-caption
+    background-color: rgba(83, 53, 73, .7)
+    margin-bottom: 20px
+    padding: 20px 25px
+    position: static
+    q
+        font-family: $clients-font
+        font-style: italic
+        font-size: calc(15px + 5 * ((100vw - 320px) / 448))
+    p
+        @include boldedUpperCaseText(13px)
+        margin-top: 30px
+
+
+.download
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    align-content: center
+    min-height: 340px
+    
+    text-align: center
+    padding: 20px 25px
+    h2
+        font-size: 28px
+        font-weight: 300
+    p
+        @include boldedUpperCaseText(13px)
+    a
+        padding: 20px 80px
+        margin-top: 15px
+
+footer
+    position: relative
+    min-height: 340px
+    background-color: $footer-color 
+    color: white
+    
+    text-align: center
+    .row
+        padding-top: 50px
+    h3 
+        @include boldedUpperCaseText(14px)
+        color: white
+        margin-bottom: 15px
+    p
+        color: $footer-font-color
+    .social-tiles
+        .fa
+            +square(40px)
+            color: $footer-main-color
+            border: 2px solid $footer-main-color
+            border-radius: 1px
+            font-size: 22px
+            &.fa-facebook
+                &:hover
+                    background-color: #3b5998
+            &.fa-twitter
+                &:hover
+                    background-color: #55acee
+            &.fa-linkedin-square
+                &:hover
+                    background-color: #007bb5
+                
+    .credits
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        height: 95px
+        width: auto
+        background-color: $credits-bg-color
+        p
+            color: $credits-main-font-color
+            top: 50%
+            position: absolute
+            transform: translate(-50%, -50%)
+            left: 50%
+            width: max-content
+            .fa-heart
+                color: red
+            b
+                color: $credits-add-font-color
+                font-weight: bold   
+
+.back-to-top
+    margin: 0
+    position: fixed
+    bottom: 40px
+    right: 40px
+    width: 70px
+    height: 70px
+    z-index: 100
+    display: inline
+    text-decoration: none
+    color: #ffffff
+    background-color: #3ea736
+    text-align: center
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.6)
+    visibility: hidden
+    border-radius: 50%
+
+    i
+        font-size: 60px
+
+    &:hover,
+    &:focus
+        background-color: adjust-color($button-color, -36, -36, -36)
+        color: #fff   
+
+    &.is-visible 
+        /* the button becomes visible */
+        visibility: visible
+        opacity: 1
+
+    &.fade-out 
+        /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+        opacity: .5
+ 
+
+@media (min-width: 991px)
+
+    .gallery
+        .wrapper
+            height: calc(250px + 100 * ((100vw - 991px) / 1400))
+
+@media (max-width: 991px) 
+
+    .navbar
+        top: ($nav-height-min - 50px)/2
+        .bottom-line
+            margin-top: ($nav-height-min - 50px)/2
+
+    .jumbotron    
+        .wraper
+            h1 
+                font-size: 55px
+                max-width: 650px
+            p  
+                font-size: 20px 
+                max-width: 650px          
+
+    .container
+        >.navbar-collapse
+            margin: 0
+
+    .navbar-brand
+        img
+            max-width: 150px
+
+
+@media (max-width: 767px) 
+
+    .container
+        >.navbar-collapse
+            background-color: rgba(35, 35, 75, 0.96)
+            text-align: center
+
+    .jumbotron    
+        .wraper
+            h1 
+                font-size: calc(35px + 15 * ((100vw - 320px) / 447))
+            p 
+                font-size: calc(16px + 4 * ((100vw - 320px) / 447))
+    .navbar-nav
+        >li
+            >a
+                transition-delay: .0s, .0s, 0s, 0s, .0s
+                &:hover
+                    padding-bottom: 15px
+                    margin-top: 0 
+                    transition-delay: .0s, .0s, 0s, 0s, .0s
+
+    .downloads
+
+    footer
+        padding-bottom: 100px 
+        .credits
+            height: 50px
+            font-size: 11px
+
+    .back-to-top
+        bottom: 15px
+        right: 15px
+        width: 40px
+        height: 40px
+        i
+            font-size: 35px
+
+@media (min-width: 767px) 
+
+    .carousel
+        img
+            width: 50%
+
+        .carousel-indicators
+            left: 75%
+            width: 30%
+            margin-left: -15%
+            bottom: 5%
+        .carousel-caption
+            position: absolute
+            width: 40%
+            top: 10%
+            left: 75%
+            margin-left: -20%   
+            text-align: left
+            q
+                font-size: calc(20px + 16 * ((100vw - 768px) / 431))
+            p
+                font-size: calc(10px + 3 * ((100vw - 768px) / 431))
+        .carousel-control
+            display: none
+        
+    //fixing navbar-top 
+    // .navbar
+    //     position: fixed
+
+    // .jumbotron
+    //     .wraper
+    //         height: 100vh 
