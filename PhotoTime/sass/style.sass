@@ -1,0 +1,598 @@
+//$main-header-font:                      'Varela Round', sans-serif
+$main-header-font:                      'Nunito', sans-serif
+
+//$hero-bg:                               url('../img/header-bg.jpg') 50% 100% 
+//$hero-bg:                               url('../img/alternate-header-bg.jpg') 50% 100% 
+//$hero-bg:                               url('../img/second-header-bg.jpg') 50% 100% 
+$hero-bg:                               url('../img/head-bg.jpg') 52% 51% 
+$subscribe-bg:                          url('../img/subscribe-bg.png') 50% 100%
+$menu-camera-icon:                      url('../img/camera-white.svg')
+
+$main-font-color:                       #fff
+//$nav-font-color:                        #ccc
+$main-color:                            #159f85
+$background-color:                      #f5f6f7
+$second-text-color:                     #222
+
+
+$nav-top-margin:                        30px
+$nav-height:                            50px
+
+
+@mixin boldedUpperCaseText($size) 
+    font-size: $size
+    font-weight: 700
+    text-transform: uppercase
+
+@mixin clearfix()
+    &:after,
+    &:before
+        display: table
+        content: ""
+        clear: both
+
+@mixin flexBox()
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    align-content: center        
+
+@mixin flexBoxLeft()
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    align-content: center        
+
+//reset ul
+ul
+    padding: 0
+    margin: 0
+    list-style: none
+
+h1,
+h2,
+h3
+    font-weight: 800
+
+h1    
+    letter-spacing: 7px
+
+h2,
+h3
+    letter-spacing: 5px
+
+.row
+    @include clearfix
+
+@mixin links()
+    transition: all .3s 
+    text-decoration: none 
+    color: inherit 
+      
+body
+    font-family: $main-header-font
+    color: $main-font-color
+    letter-spacing: 1px
+
+header
+    &::after
+        content: ''
+        background: $hero-bg no-repeat
+        background-position-x: 52%
+        background-blend-mode: multiply
+        background-color: rgba(119, 119, 119, 0.6)
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        background-attachment: fixed
+        background-size: cover
+
+.navbar
+    z-index: 2
+    background: none
+    border: none 
+
+    .navbar-nav
+        padding-top: 20px
+        padding-bottom: 10px
+        border-bottom-right-radius: 10px
+        border-bottom-left-radius: 10px
+        >li
+            text-align: center
+            width: 140px  
+        >li:not([class="no-menu"])    
+            &:after
+                content: "" 
+                position: absolute 
+                top: 0 
+                left: 0 
+                width: 100% 
+                height: 100% 
+                background-color: rgba(31, 31, 31, 0.5) 
+                z-index: -1 
+                transform: rotateX(90deg) 
+                transition: all .3s ease-out
+            &:hover
+                &:after
+                    transform: rotateX(0deg)
+                    transition: transform .3s ease-in       
+            >a
+                color: $main-font-color  
+                font-size: 16px 
+                width: 100%
+                @include links()
+                transition: all .3s
+                
+                &:hover,
+                &:focus
+                    background-color: rgba(0,0,0,0)
+                    font-weight: 700
+                    transition: font .2s .1s
+.menu-camera
+    background: $menu-camera-icon 
+    background-size: cover
+    width: 50px
+    height: 50px
+
+.navbar-center
+    left: 50%
+    position: relative
+    transform: translateX(-50%)
+
+.jumbotron
+    position: relative
+    width: 100%
+    height: 100vh
+    margin: 0
+    padding: 0
+    .wrapper
+        position: absolute
+        z-index: 1
+        @include flexBox()
+        height: 100vh
+        top: 0
+        width: 100%
+        //color: $hero-font-color
+        text-align: center
+        text-transform: uppercase
+        h1
+            font-size: 65px
+            font-family: $main-header-font
+            flex: 0 1 auto
+            max-width: 900px
+            padding-left: 15px
+            padding-right: 15px
+            font-weight: 800
+        p
+            font-size: 22px
+            max-width: 875px
+            font-weight: 300
+            flex: 0 1 auto
+            padding-left: 15px
+            padding-right: 15px
+            text-transform: lowercase
+        a
+            margin-top: 80px
+            padding: 15px 50px  
+            @include links()
+
+.jumbotron_bottom-links
+    z-index: 1
+    position: absolute
+    bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+
+.icon
+    display: inline-block
+    height: 50px
+    width: 50px
+    .fa
+        transition: all .3s
+    a   
+        @include links()
+        padding: 0 10px
+        font-size: 28px
+        &:hover,
+        &:focus
+            .fa   
+                transform: scale(1.2)
+                color: $main-color 
+
+.secondSection
+    color: $second-text-color     
+    background-color: $background-color
+
+    .container
+        background: url(../img/phone.png) no-repeat
+        background-position: bottom right
+        background-size: 625px
+
+    .left-panel
+        h2
+            color: $main-color
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+        position: relative
+        height: 500px
+        p
+            margin: 30px auto
+            padding-right: 25px
+            line-height: 2
+
+    .image
+        position: relative
+        >img
+            float: right
+            position: absolute
+            right: 0
+
+.btn-main
+    text-transform: uppercase
+    padding: 10px 25px
+    background-color: $main-color
+    color: white
+    border: 0
+    border-radius: 4px
+    font-size: 13px
+    font-weight: 500
+    transition: .3s
+    border: 1px solid $main-color
+    &:hover
+        color: $main-color
+        background-color: #fff
+
+.comunity
+    background-color: $background-color 
+    color: $second-text-color
+    @include flexBox()  
+    .left-panel
+        @include flexBox()
+        height: 490px  
+    .right-panel
+        width: 800px
+        float: right
+    .carousel
+        padding: 123px 0
+    .carousel-control
+        font-size: 14px
+        top: 90px
+        bottom: unset
+        left: unset
+        width: 30px
+        color: #000
+        text-shadow: unset
+        &.left
+            right: 30px
+        &.right
+            right: 0        
+        &.left,
+        &.right
+            background-image: none  
+
+    .item
+        font-size: 0
+        img
+            display: inline
+            &:first-of-type
+                margin-right: 28px                   
+
+.design
+    color: $second-text-color
+    min-height: 560px
+    h2
+        color: $main-color
+
+.design-left-panel 
+    background: url(../img/IPhone-flat.png) no-repeat
+    height: 400px
+    position: relative
+    top: 160px
+    overflow: hidden 
+    .slider
+        width: 261px
+        height: 280px
+        position: 
+        top: 120px
+        left: 33px
+        position: absolute
+        overflow: hidden
+        ul
+            width: 1305px
+            li
+                float: left
+        
+
+.design-right-panel
+    @include flexBoxLeft()
+    height: 500px
+    h2
+        margin-bottom: 30px
+    p
+        margin-bottom: 30px
+
+.slider-controls 
+    margin-top: 30px
+       
+
+    .right
+        padding-left: 5px             
+
+    .right,
+    .left
+        cursor: pointer
+        opacity: 0.5
+        &:hover,
+        &:focus
+            opacity: 0.9
+
+.counter
+    font-weight: 700
+    display: block
+    margin-bottom: 10px
+.subscribe
+    height: 100vh
+    background: $subscribe-bg
+    background-size: cover
+    background-attachment: fixed
+    @include flexBox()
+    .wrapper
+        @include flexBox()
+        height: 120px
+
+.subscribe-header
+    margin-bottom: 40px
+
+.form-email-input
+    border: 0
+    border-bottom-right-radius: 0 
+    border-top-right-radius: 0 
+    height: 60px 
+    width: 280px !important
+    font-size: 22px
+    &::placeholder
+        color: #080808 
+        font-weight: 800 
+        letter-spacing: 3px
+
+.form-email-submit
+    height: 60px 
+    width: 60px
+    border-bottom-left-radius: 0 
+    border-top-left-radius: 0 
+    margin-left: -5px 
+    padding: 0  
+    border: 0
+    .fa
+        font-size: 22px 
+
+.download
+    @include flexBox()
+    color: $second-text-color
+    background-color: $background-color
+    height: 340px
+    h2
+        margin-bottom: 35px
+    span 
+        position: absolute
+        right: 0
+        width: 39px
+        height: 100%
+        background-color: rgba(11, 99, 82, 0.86)
+        top: 0
+        border-top-right-radius: 3px
+        border-bottom-right-radius: 3px
+        text-align: center
+        i
+            font-size: 20px
+            top: 21%
+            position: relative
+            color: white
+    .btn-main
+        position: relative 
+        text-align: left
+        width: 190px
+        margin: 20px
+        border: 1px solid #0c6b59
+   
+footer
+    color: $second-text-color
+    height: 130px
+    font-weight: 700
+    @include flexBox()
+    a
+        @include links()
+        &:hover,
+        &:focus
+            text-decoration: inherit
+            color: $main-color
+    span
+        color: $main-color
+        padding-right: 15px
+        padding-left: 15px
+    p
+        padding: 20px 0 0 0 
+        margin: 0
+
+    .menu-camera
+        transform: translateX(-50%)    
+
+@media (max-width: 1099px)
+    .comunity
+        
+        .col-md-3
+            width: 100%
+            float: unset
+        .carousel-control
+            top: 0
+            &.left
+                left: 25%
+                bottom: 365px
+            &.right
+                right: 25%
+                bottom: 365px
+        .carousel
+            padding: 50px 0 100px 0
+        .left-panel
+            height: 250px    
+        .right-panel
+            float: unset    
+
+@media (max-width: 991px) and (min-width: 768px)
+    .navbar
+        .navbar-nav
+            >li
+                width: 120px
+@media (max-width: 835px)
+    .comunity
+        .carousel
+            padding-top: 55px
+        .left-panel
+         //   height: 250px
+        .right-panel
+            width: 100%
+        .carousel-control 
+            top: 87%   
+            &.left
+                left: 10px
+            &.right
+                right: 10px
+
+
+        .item    
+            img
+                width: 100%
+                max-width: 450px   
+                display: block         
+                &:first-of-type
+                    margin-right: 0
+                    margin-bottom: 15px                
+
+@media (max-width: 767px)
+     
+    .navbar
+        margin-top: 0px
+
+    .bottom-line
+        border-bottom: 1px solid rgba(255,255,255, .15)
+        margin-top: ($nav-height - 50px)/2
+
+    .navbar-center
+        left: 0
+        padding: 7.5px 0
+        transform: none
+
+    .navbar
+
+        // .navbar-header
+        //     background-color: rgba(0, 0, 0, .6)
+
+        .navbar-collapse
+            border: 0
+    
+        .navbar-nav
+            margin: 0
+            >li
+                width: 100%  
+                &:not([class=no-menu]):after  
+                    background-color: rgba(31, 31, 31, 0.7)   
+
+        .icon-bar
+            background-color: $main-color
+
+        .navbar-toggle
+            background-color: rgba(255, 255, 255, 0.15)    
+    
+    .menu-camera-hide
+        display: none
+
+    .secondSection
+        .container
+            background-size: 430px
+
+        .left-panel
+            display: block
+            padding-top: 40px 
+            p
+                padding-right: 0   
+                text-align: justify 
+
+    .flex-rev
+        display: flex
+        flex-direction: column-reverse
+        align-content: center  
+
+    .design-left-panel
+        width: 324px
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+
+    .design-right-panel
+        align-items: center
+        text-align: justify
+
+    .counter
+        text-align: center    
+
+    .form-control
+        display: inline-block
+        vertical-align: middle    
+
+    
+
+
+@media (max-width: 480px)
+    .jumbotron
+        .wrapper    
+            h1
+                font-size: 45px
+
+    .text-center-sm
+        text-align: center
+
+    .secondSection
+        .container
+            background-size: 300px
+
+            .left-panel
+                padding: 20px 
+                height: 590px
+                p
+                    line-height: 1.7
+                     
+    footer
+        .menu-camera
+            display: none
+
+        .col-xs-11
+            width: 100%    
+
+        span
+            padding-right: 8px
+            padding-left: 8px
+
+    .form-email-input
+        height: 40px 
+        width: 240px !important
+        font-size: 18px       
+
+    .form-email-submit
+        height: 40px 
+        width: 40px
+        .fa
+            font-size: 18px    
+
+    .download
+        height: max-content
+        padding: 35px 15px        
+        h2
+            font-size: 27px
+    
