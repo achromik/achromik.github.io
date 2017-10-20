@@ -66,7 +66,7 @@ a span {
 
 /* -------------- HERO ------------- */
 .hero {
-    background: url(http://achromik.com/kodilla/zadania/project-perfect/img/hero3_1-lg-prog.jpg) ;
+    background: url(http://achromik.com/kodilla/zadania/project-perfect/img/hero3_1-lg-prog.jpg) 40% ;
     background-size: cover;
     height: 100vh;
     position: relative; 
@@ -461,7 +461,7 @@ footer h3 {
 
 .stayin input {
     height: 55px;
-    font-size: 35px;
+    font-size: 22px;
     font-weight: 300;
     width: calc(100% - 70px);
     border: 0;
