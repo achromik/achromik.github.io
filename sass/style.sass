@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Raleway:300,900')
+
+@mixin flex 
+    display: flex
+    align-items: center
+    justify-content: center
+
+* 
+    margin: 0
+    padding: 0
+
+a   
+    color: white
+    text-decoration: none
+    font-weight: bold
+
+
+body
+    @include flex
+    flex-direction: column
+    background-color: #242424
+    height: 100vh
+
+.welcome
+    @include flex
+    flex-direction: column
+    color: #ccc
+
+.welcome_button
+    height: 170px
+    width: 170px
+    border-radius: 50%
+    background: url('../src/foto.jpg')
+    background-size: cover
+    box-shadow: 0 0 20px #000
+
+.welcome_name
+    color: #fff
+    font-size: 45px
+    font-family: 'Heebo', sans-serif
+    font-weight: 300
+    margin-top: 20px
+    text-shadow: 0 0 20px #000
+
+.welcome_name-bold
+    font-weight: 900
+
+.welcome_desc
+    font-weight: 300
+    margin-bottom: 20px
+
+.welcome_media
+    color: #eee
+    text-align: center
+    .fa 
+        padding-right: 10px
+        
+
+.welcome_icons
+    margin-top: 30px        
+    img
+        height: 24px
+        margin-bottom: -2px
+
+.info
+    width: 75%
+    text-align: center
+    color: #ccc
+    /* justify-self: flex-end; */
+    /* align-self: auto; */
+    position: fixed
+    bottom: 0
+    margin-bottom: 40px
+    h4
+        color: #fff
