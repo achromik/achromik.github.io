@@ -1,30 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Raleway:300,900')
+@import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Roboto:300,400,600')
 
 @mixin flex 
     display: flex
     align-items: center
     justify-content: center
 
+@mixin screen($size)
+    $desktop: "(min-width: 1024px)";
+    $tablet: "(max-width: 1023px)";
+    $mobile: "(max-width: 475px)";
+    @if $size == desktop 
+        @media only screen and #{$desktop} 
+            @content;
+    @else if $size == tablet 
+        @media only screen and #{$tablet} 
+            @content;
+    @else if $size == mobile 
+        @media only screen and #{$mobile} 
+            @content;
+    @else 
+        @media only screen and #{$size} 
+            @content;
+
+
+
+@font-face 
+      font-family: 'portfolio';
+      src: url('../font/portfolio.eot?78515472');
+      src: url('../font/portfolio.eot?78515472#iefix') format('embedded-opentype'),url('../font/portfolio.woff?78515472') format('woff'), url('../font/portfolio.ttf?78515472') format('truetype'),url('../font/portfolio.svg?78515472#portfolio') format('svg');
+      font-weight: normal;
+      font-style: normal;
+
 * 
     margin: 0
     padding: 0
 
 a   
-    color: white
     text-decoration: none
-    font-weight: bold
-
 
 body
     @include flex
     flex-direction: column
-    background-color: #242424
+    background-image: url('../src/bg.png')
+    background-size: cover
     height: 100vh
+    font-family: 'Roboto', sans-serif
+   
 
 .welcome
     @include flex
     flex-direction: column
+    background-color: rgba(37, 37, 37, 0.85)
     color: #ccc
+    height: 100vh
+    width: 100vw
 
 .welcome_button
     height: 170px
@@ -41,35 +70,103 @@ body
     font-weight: 300
     margin-top: 20px
     text-shadow: 0 0 20px #000
+    @include screen('mobile')
+        font-size: 33px
+    
 
 .welcome_name-bold
     font-weight: 900
 
+.welcome_bracket
+    font-weight: 600
+    font-size: 30px
+    color: yellow
+
 .welcome_desc
     font-weight: 300
     margin-bottom: 20px
+    color: #31c2e4;
 
 .welcome_media
-    color: #eee
+    color: #ae81ff
     text-align: center
-    .fa 
+    [class*="icon-"]
+        font-size: 20px
         padding-right: 10px
-        
+        color: #f92672
+
+
+            
 
 .welcome_icons
     margin-top: 30px        
+    [class*="icon-"]
+        font-size: 30px
+        color: white
+        padding: 0 10px
+        
+        &:before
+            transition: .3s
+            transform: rotate(30deg)
+
+    a:hover
+        [class*="icon-"]:before
+            transform: scale(1.2) rotate(0deg)
+
+    .icon-application
+        font-size: 26px
+        top: -2px
+        position: relative
+    
+.info_toggle
+    height: 35px
+    background-size: cover
+    z-index: 4
+    width: 40px
+    position: absolute
+    left: 0
+    top: 30px
+    background-color: rgba(256,256,256,.2)
+    padding: 13px
+    border-top-right-radius: 10px
+    border-bottom-right-radius: 10px
+    border: 1px solid #444;
+    box-shadow: 2px 2px 10px rgba(0,0,0, .5)
+    perspective: 100px
     img
-        height: 24px
-        margin-bottom: -2px
+        height: 35px
+        animation: swingY 2s linear 0s infinite normal
+    &:hover
+         + .info
+            bottom: 0
 
 .info
     width: 75%
     text-align: center
     color: #ccc
-    /* justify-self: flex-end; */
-    /* align-self: auto; */
     position: fixed
-    bottom: 0
-    margin-bottom: 40px
-    h4
+    bottom: -200px
+    padding-bottom: 40px
+    //margin-bottom: -80px
+    transition: .5s
+    background-color: rgb(43, 42, 42);
+    box-shadow: 2px 2px 10px rgba(0,0,0, .5);
+    padding: 20px 20px 40px 20px;
+    border-radius: 10px;
+    h3
         color: #fff
+        padding-bottom: 20px
+
+@keyframes swingY
+    25%
+        transform: rotateY(90deg)
+    50%
+        transform: rotateY(180deg)
+    75%
+        transform: rotateY(270deg)    
+    100%
+        transform: rotateY(360deg)
+
+
+
+
