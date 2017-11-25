@@ -66,7 +66,8 @@ body {
   .welcome_desc:before, .welcome_desc:after {
     font-weight: 600;
     font-size: 30px;
-    color: yellow; }
+    color: yellow;
+    padding: 0 15px; }
 
 .welcome_media {
   color: #ae81ff;
