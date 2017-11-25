@@ -55,15 +55,18 @@ body {
 .welcome_name-bold {
   font-weight: 900; }
 
-.welcome_bracket {
-  font-weight: 600;
-  font-size: 30px;
-  color: yellow; }
-
 .welcome_desc {
   font-weight: 300;
   margin-bottom: 20px;
   color: #31c2e4; }
+  .welcome_desc:before {
+    content: '{'; }
+  .welcome_desc:after {
+    content: '}'; }
+  .welcome_desc:before, .welcome_desc:after {
+    font-weight: 600;
+    font-size: 30px;
+    color: yellow; }
 
 .welcome_media {
   color: #ae81ff;
@@ -116,13 +119,15 @@ body {
   color: #ccc;
   position: fixed;
   bottom: -200px;
-  padding-bottom: 40px;
   transition: .5s;
   background-color: #2b2a2a;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   padding: 20px 20px 40px 20px;
   border-top-right-radius: 10px;
-  border-top-left-radius: 10px; }
+  border-top-left-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
   .info h3 {
     color: #fff;
     padding-bottom: 20px; }

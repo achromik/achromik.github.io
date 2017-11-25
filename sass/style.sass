@@ -77,15 +77,20 @@ body
 .welcome_name-bold
     font-weight: 900
 
-.welcome_bracket
-    font-weight: 600
-    font-size: 30px
-    color: yellow
-
 .welcome_desc
     font-weight: 300
     margin-bottom: 20px
     color: #31c2e4;
+    &:before
+        content: '{'
+    &:after
+        content: '}'
+    &:before,        
+    &:after
+        font-weight: 600
+        font-size: 30px
+        color: yellow
+    
 
 .welcome_media
     color: #ae81ff
@@ -146,15 +151,15 @@ body
     color: #ccc
     position: fixed
     bottom: -200px
-    padding-bottom: 40px
-    //margin-bottom: -80px
     transition: .5s
     background-color: rgb(43, 42, 42);
     box-shadow: 2px 2px 10px rgba(0,0,0, .5);
     padding: 20px 20px 40px 20px;
     border-top-right-radius: 10px
     border-top-left-radius: 10px
-
+    left: 0
+    right: 0
+    margin: 0 auto
     h3
         color: #fff
         padding-bottom: 20px
