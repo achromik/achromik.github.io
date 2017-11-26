@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Heebo:100,900|Roboto:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Heebo:100,900|Encode+Sans+Expanded:300,400,600");
 @font-face {
   font-family: 'portfolio';
   src: url("../font/portfolio.eot?78515472");
@@ -21,7 +21,7 @@ body {
   background: url(../img/bg.jpg) 50% 50%;
   background-size: cover;
   height: 100vh;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Encode Sans Expanded', sans-serif; }
 
 .welcome {
   display: flex;
@@ -58,14 +58,17 @@ body {
 .welcome_desc {
   font-weight: 300;
   margin-bottom: 20px;
-  color: #31c2e4; }
+  color: #31c2e4;
+  font-size: 2em; }
   .welcome_desc:before {
     content: '{'; }
   .welcome_desc:after {
     content: '}'; }
   .welcome_desc:before, .welcome_desc:after {
     font-weight: 600;
-    font-size: 30px;
+    position: relative;
+    top: .1em;
+    font-size: 1.65em;
     color: yellow;
     padding: 0 15px; }
 
