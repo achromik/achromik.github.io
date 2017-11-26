@@ -13,7 +13,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-image: url("../src/bg.png");
+        background: url(../img/bg.png) 50% 50%;
         background-size: cover;
         height: 100vh;
         font-family: 'Roboto', sans-serif; 
@@ -32,7 +32,8 @@
     .welcome_desc {
         font-weight: 300;
         margin-bottom: 20px;
-        color: #31c2e4; }
+        color: #31c2e4; 
+        font-size: calc(1.2em + 10 * ((100vw - 320px) / (1120))); }
 
     .welcome_desc:before {
         content: '{'; }
@@ -42,12 +43,12 @@
 
     .welcome_desc:before, .welcome_desc:after {
         font-weight: 600;
-        font-size: 30px;
+        font-size: calc(2em +  10 * ((100vw - 320px) / (1120)));
         color: yellow;
-        padding: 0 15px; }
-    a:hover {
-        transform: scale(1.1); }
-    a {
+        padding: 0 15px; 
+        top: .1em;
+        position: relative; }
+    .welcome a {
         text-decoration: none;
         color: white;
         border: 2px solid yellow;
@@ -55,6 +56,8 @@
         border-radius: 8px;
         margin-top: 50px;
         transition: .3s; }
+    .welcome a:hover {
+        transform: scale(1.1); }
 </style>
 <body>
     <section class="welcome">
