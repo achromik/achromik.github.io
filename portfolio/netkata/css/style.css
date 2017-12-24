@@ -116,8 +116,7 @@ ol {
   height: 790px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/concave-bg.png") 80% 50% no-repeat;
   z-index: -1;
-  background-size: cover;
-  overflow: hidden; }
+  background-size: cover; }
   .concave .welcome-content {
     margin: 170px;
     justify-content: center;
@@ -128,8 +127,9 @@ ol {
     .concave .welcome-content p:last-of-type {
       width: 70%; }
   .concave button {
-    left: 750px;
-    bottom: -710px; }
+    left: -190px;
+    bottom: -570px;
+    position: relative; }
 
 /******** Slider ****/
 .slider {
