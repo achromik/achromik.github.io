@@ -23,7 +23,6 @@ p {
   font-weight: 100;
   background-color: #af9963;
   color: white;
-  z-index: 2;
   position: absolute;
   cursor: pointer; }
 
@@ -73,7 +72,11 @@ body {
   height: 1125px;
   background: url("../src/hero.png") 100% no-repeat;
   overflow: hidden;
-  background-position-y: -13%; }
+  background-position-y: -13%;
+  border-bottom-left-radius: 100% 7%;
+  border-bottom-right-radius: 100% 7%;
+  transform: translateY(40px);
+  background-color: white; }
 
 ol {
   list-style-type: decimal-leading-zero; }
@@ -112,32 +115,9 @@ ol {
 .concave {
   height: 790px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/concave-bg.png") 80% 50% no-repeat;
-  position: relative;
-  z-index: 1;
-  background-size: cover; }
-  .concave:before {
-    content: '';
-    border-top: 0;
-    position: absolute;
-    border-bottom-left-radius: 50% 100%;
-    border-bottom-right-radius: 50% 100%;
-    height: 40px;
-    background-color: #ffffff;
-    top: 0;
-    left: 0;
-    width: 100%; }
-  .concave:after {
-    content: '';
-    border-bottom: 0;
-    position: absolute;
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
-    height: 40px;
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1; }
+  z-index: -1;
+  background-size: cover;
+  overflow: hidden; }
   .concave .welcome-content {
     margin: 170px;
     justify-content: center;
@@ -147,38 +127,47 @@ ol {
       margin-top: 50px; }
     .concave .welcome-content p:last-of-type {
       width: 70%; }
-    .concave .welcome-content button {
-      left: 750px;
-      bottom: 20px; }
+  .concave button {
+    left: 750px;
+    bottom: -710px; }
 
 /******** Slider ****/
 .slider {
-  background: url("../src/bg-slider.png") no-repeat;
   height: 810px;
-  top: -40px;
   position: relative; }
-  .slider header {
+
+.wrapper {
+  background: url("../src/bg-slider.png") no-repeat;
+  background-size: cover;
+  border-top-left-radius: 100% 7%;
+  border-top-right-radius: 100% 7%;
+  overflow: hidden;
+  transform: translateY(-40px); }
+  .wrapper header {
     height: 140px;
     margin-left: 50%;
-    font-weight: 100; }
-  .slider .slide {
+    font-weight: 100;
+    position: relative;
+    top: 40px; }
+  .wrapper .slide {
     height: 670px; }
-    .slider .slide .info {
+    .wrapper .slide .info {
       width: 50%;
       margin-left: 30px;
       padding-right: 200px;
       font-weight: 100; }
-      .slider .slide .info h2 {
+      .wrapper .slide .info h2 {
         margin-top: 50px;
         margin-bottom: 50px; }
-      .slider .slide .info .date {
+      .wrapper .slide .info .date {
         font-size: 22px;
         color: #af9963;
         font-weight: 100; }
-  .slider button {
-    bottom: -94px;
-    z-index: 2;
-    left: 75vw; }
+
+button {
+  bottom: -94px;
+  z-index: 2;
+  left: 75vw; }
 
 .carousel-control-prev,
 .carousel-control-next {
