@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Heebo:100,900|Encode+Sans+Expanded:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600");
 @font-face {
   font-family: 'portfolio';
   src: url("../font/portfolio.eot?78515472");
@@ -13,25 +13,48 @@
 a {
   text-decoration: none; }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: url(../img/bg.jpg) 50% 50%;
-  background-size: cover;
-  height: 100vh;
-  font-family: 'Encode Sans Expanded', sans-serif; }
+section {
+  padding-top: 120px;
+  padding-bottom: 120px; }
+  section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #222222;
+    margin-bottom: 10px;
+    letter-spacing: 2px; }
+  section h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    color: #777777; }
+  section h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700; }
+  section h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700; }
+  section h6 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    font-weight: 400; }
+  section p {
+    padding: 10px 12px;
+    color: #777777;
+    font-family: 'Roboto Slab', serif;
+    width: 100%; }
+  section q {
+    font-weight: 700;
+    letter-spacing: 2px; }
 
 .welcome {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  background: linear-gradient(rgba(4, 31, 49, 0.85), rgba(4, 4, 4, 0.9)), url(../img/bg.jpg) 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
   background-color: rgba(37, 37, 37, 0.85);
   color: #ccc;
-  height: 100vh;
-  width: 100vw; }
+  height: 100vh; }
 
 .welcome_button {
   height: 170px;
@@ -96,54 +119,56 @@ body {
     top: -2px;
     position: relative; }
 
-.info_toggle {
-  height: 35px;
+.wrapper {
+  margin-top: 60px; }
+
+.about .wrapper {
+  width: 75%; }
+  @media only screen and (max-width: 991.99px) {
+    .about .wrapper {
+      width: 95vw; } }
+
+.about_image {
+  width: 350px;
+  margin: 20px; }
+  @media only screen and (max-width: 991.99px) {
+    .about_image {
+      width: 30vw;
+      min-width: 180px; } }
+  @media only screen and (max-width: 575.99px) {
+    .about_image {
+      display: none; } }
+
+.about_description {
+  padding: 20px 12px; }
+
+.portfolio {
+  background: linear-gradient(rgba(175, 174, 174, 0.85), rgba(249, 249, 249, 0.85)), url(../img/portfolio.jpg) 50% 50%;
   background-size: cover;
-  z-index: 4;
-  width: 40px;
-  position: absolute;
-  left: 0;
-  top: 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 13px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 1px solid #444;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  perspective: 100px; }
-  .info_toggle img {
-    height: 35px;
-    animation: swingY 2s linear 0s infinite normal; }
-  .info_toggle:hover + .info {
-    bottom: 0; }
+  background-attachment: fixed; }
 
-.info {
-  width: 75%;
-  text-align: center;
-  color: #ccc;
-  position: fixed;
-  bottom: -230px;
-  transition: .5s;
-  background-color: #2b2a2a;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  padding: 20px 20px 40px 20px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-  .info h3 {
-    color: #fff;
-    padding-bottom: 20px; }
+.projects {
+  padding: 0;
+  margin-top: 40px; }
 
-@keyframes swingY {
-  25% {
-    transform: rotateY(90deg); }
-  50% {
-    transform: rotateY(180deg); }
-  75% {
-    transform: rotateY(270deg); }
-  100% {
-    transform: rotateY(360deg); } }
+.project {
+  background-color: white;
+  flex: 0 0 25%;
+  margin: 25px 17px;
+  min-width: 290px;
+  box-shadow: 0 0 20px 1px rgba(50, 50, 50, 0.85); }
+  .project img {
+    display: block;
+    width: auto; }
+  .project .details {
+    padding: 25px;
+    background-color: #222222; }
+    .project .details p {
+      padding: 0;
+      margin: 0;
+      font-family: 'Noto Serif', serif; }
+    .project .details h4 {
+      margin: 0;
+      color: white; }
 
 /*# sourceMappingURL=style.css.map */

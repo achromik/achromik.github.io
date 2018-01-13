@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aleksander Chromik - Web Developer</title>
 
-    <meta property="og:url"                content="http://aleksanderchromik.pl" />
-    <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Aleksander Chromik - Web Developer" />
-    <meta property="og:description"        content="W połowie 2017 roku podjąłem decyzję, aby rozwijać się w kierunku web developmentu. Programowanie od zawsze było w kręgu moich zainteresowań. Jestem osobą, którą cechuje sumienność, ambicja oraz łatwość w  nawiązywaniu kontaktów. Lubię tworzyć nowe rzeczy, poszukiwać rozwiązań problemów. W życiu staram się kierować dewizą: „You can have results or excuses. Not both.”" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/foto.jpg" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/main.png" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/ActiveBox.png" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/PhotoTime.png" />
-    
+    <meta property="og:url" content="http://aleksanderchromik.pl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aleksander Chromik - Web Developer" />
+    <meta property="og:description" content="W połowie 2017 roku podjąłem decyzję, aby rozwijać się w kierunku web developmentu. Programowanie od zawsze było w kręgu moich zainteresowań. Jestem osobą, którą cechuje sumienność, ambicja oraz łatwość w  nawiązywaniu kontaktów. Lubię tworzyć nowe rzeczy, poszukiwać rozwiązań problemów. W życiu staram się kierować dewizą: „You can have results or excuses. Not both.”"
+    />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/foto.jpg" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/main.png" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/ActiveBox.png" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/PhotoTime.png" />
+
     <meta property="fb:app_id" content="136469600406700" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-    <section class="welcome">
+    <header class="welcome d-flex justify-content-center align-items-center flex-column">
         <div class="welcome_button"></div>
-        <h1 class="welcome_name">Aleksander<span class="welcome_name-bold">Chromik</span></h1>
+        <h1 class="welcome_name">Aleksander
+            <span class="welcome_name-bold">Chromik</span>
+        </h1>
         <h2 class="welcome_desc">Web Developer</h2>
-        <div class="welcome_media">
+        <!-- <div class="welcome_media">
             <p><i class="icon-phone"></i>606 829 863</p>
             <p><i class="icon-mail"></i>mail@aleksanderchromik.pl</p>
             <div class="welcome_icons">
@@ -40,14 +47,85 @@
                     <i class="icon-application"></i>
                 </a>
             </div>
+        </div> -->
+    </header>
+
+    <section id="about" class="container d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-center text-uppercase">O mnie</h1>
+        <h3 class="text-center ">Czyli co? jak? i dlaczego?</h3>
+        <div class="wrapper d-flex justify-content-center align-items-start">
+            <div class="about_leftside">
+                <img class="about_image" src="./img/laptop.jpeg" alt="Laptop and book on a desk">
+            </div>
+            <div class="about-rightside">
+                <p class="about_description text-justify">Pasja do programowania narodziła się gdy miałem 13 lat. Napisałem wtedy swój pierwszy skrypt – program umożliwiający
+                    edycję nut (Amiga500 – AMOS). Rok temu postanowiłem rozwijać się w kierunku web developmentu. Lubię tworzyć
+                    nowe rzeczy, poszukiwać rozwiązań problemów. W życiu staram się kierować dewizą:
+                    <q>You can have results or excuses. Not both.</q>
+                    W czasie wolny od kodowania biegam…</p>
+            </div>
         </div>
+
     </section>
-    <div class="info_toggle">
+
+    <section id="porfolio" class="portfolio container-fluid d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-center text-uppercase">Portfolio</h1>
+        <h3 class="text-center">
+            <q>Ciągle się jescze uczę.</q> - Michał Anioł Buonarroti w wieku 87 lat.</h3>
+        <div class="wrapper d-flex align-items-center justify-content-around flex-column  ">
+            <div class="projects container d-flex align-items-center justify-content-center align-self-stretch flex-wrap">
+                <div class="project">
+                    <img src="./src/Golden.jpg" alt="Screenshot from website template Golden Studio">
+                    <div class="details">
+                        <h4 class="text-center">GoldenStudio</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./src/photoapp.jpg" alt="Screenshot from website template PhotoApp">
+                    <div class="details">
+                        <h4 class="text-center">PhotoApp</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./src/activebox.jpg" alt="Screenshot from website template ActiveBox">
+                    <div class="details">
+                        <h4 class="text-center">ActiveBox</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./src/pictureperfect.jpg" alt="Screenshot from website template PicturePerfect">
+                    <div class="details">
+                        <h4 class="text-center">PicturePerfect</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- <div class="info_toggle">
         <img src="./img/danger.png" alt="">
     </div>
     <section class="info">
         <h3>Informacja</h3>
         <p>Witam Cię na mojej stronie, która w tej chwili jest w trakcie budowy, ale już wkrótce pochwalę się tutaj moim portfolio. Już teraz zapraszam Cię do następnej wizyty.</p>
-    </section>
+    </section> -->
+
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./js/scripts.js"></script> -->
+
 </body>
+
 </html>
