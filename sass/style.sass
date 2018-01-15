@@ -7,10 +7,27 @@ $darker-bg-color:  #f7f7f7
 $bolded-text-color: #222222
 $faded-text-color: #777777
 
-@mixin flex 
-    display: flex
-    align-items: center
-    justify-content: center
+
+@mixin brackets($weight)
+    &:before
+        content: '{'
+    &:after
+        content: '}'
+    &:before,        
+    &:after
+        font-weight: $weight
+        position: relative
+        top: .1em
+        font-size: 1.65em
+        color: yellow
+        padding: 0 15px
+        font-family: 'Encode Sans Expanded', sans-serif  
+
+
+// @mixin flex 
+//     display: flex
+//     align-items: center
+//     justify-content: center
 
 @mixin screen($size)
     $desktop: "(min-width: 992px)"
@@ -29,8 +46,6 @@ $faded-text-color: #777777
         @media only screen and #{$size} 
             @content
 
-
-
 @font-face 
       font-family: 'portfolio'
       src: url('../font/portfolio.eot?78515472')
@@ -42,8 +57,10 @@ $faded-text-color: #777777
     margin: 0
     padding: 0
 
-a   
-    text-decoration: none
+a,
+a
+    &:hover
+        text-decoration: none
 
 
 section
@@ -87,8 +104,7 @@ section
 //     background: url(../img/bg.jpg) 50% 50%
 //     background-size: cover
 //     height: 100vh
-//     font-family: 'Encode Sans Expanded', sans-serif
-   
+//     font-family: 'Encode Sans Expanded', sans-serif  
 
 .welcome
     // @include flex
@@ -126,18 +142,7 @@ section
     margin-bottom: 20px
     color: #31c2e4
     font-size: 2em
-    &:before
-        content: '{'
-    &:after
-        content: '}'
-    &:before,        
-    &:after
-        font-weight: 600
-        position: relative
-        top: .1em
-        font-size: 1.65em
-        color: yellow
-        padding: 0 15px
+    @include brackets(600)
 
 .welcome_media
     color: #ae81ff
@@ -152,28 +157,26 @@ section
     [class*="icon-"]
         font-size: 30px
         color: white
-        padding: 0 10px
-        
+        padding: 0 10px       
         &:before
             transition: .3s
             transform: rotate(30deg)
-
     a:hover
         [class*="icon-"]:before
             transform: scale(1.2) rotate(0deg)
-
     .icon-application
         font-size: 26px
         top: -2px
         position: relative
+
 .wrapper
     margin-top: 60px
+
 .about
     .wrapper
         width: 75%
         @include screen('tablet')
             width: 95vw
-
 
 .about_image
     width: 350px
@@ -183,41 +186,93 @@ section
         min-width: 180px
     @include screen('(max-width: 575.99px)')   
         display: none 
+
 .about_description
     padding: 20px 12px    
 
 .portfolio
-    background: linear-gradient(rgba(175, 174, 174, 0.85), rgba(249, 249, 249, 0.85)), url(../img/portfolio.jpg) 50% 50%
+    background: linear-gradient(rgba(245, 245, 245, 0.5), rgba(249, 249, 249, 0.5)), url(../img/portfolio.jpg) 50% 50%
     background-size: cover
     background-attachment: fixed
 
-.projects
+.portfolio_projects
     // max-width: 975px
     padding: 0
     margin-top: 40px
 
-.project
+.portfolio_project
     background-color: white
     flex: 0 0 25%
     margin: 25px 17px
     min-width: 290px
     box-shadow: 0 0 20px 1px rgba(50, 50, 50, 0.85);
-    
+    transition: transform .5s ease-out
+    z-index: 0
+    &:hover
+        transform: scale(1.3)
+        z-index: 1
+        .portfolio_project_layer
+            width: 930px
+            height: 930px
+            background-color: rgba(255, 255, 255, 0.9)
+            .portfolio_project_description
+                opacity: 1
+                transition: .1s .4s ease
     img
         display: block
         width: auto
-    .details
-        padding: 25px
-        background-color: $bolded-text-color
-        p
-            padding: 0
-            margin: 0
-            font-family: 'Noto Serif', serif
-        h4
-            margin: 0
-            color: white
+
+.portfolio_project_image
+    position: relative        
+    overflow: hidden
+
+.portfolio_project_details
+    padding: 25px
+    background-color: $bolded-text-color
+    h4
+        @include brackets(600)
+    p
+        padding: 0
+        margin: 0
+        font-family: 'Noto Serif', serif
+    h4
+        margin: 0
+        color: white
 
 
+.portfolio_project_layer
+    width: 0
+    height: 0
+    position: absolute
+    background-color: rgba(34, 34, 34, 1)
+    transition: .4s 
+    border-radius: 50%
+    transform: translateX(-50%) translateY(-50%)
+
+.portfolio_project_description
+    width: 290px;
+    position: absolute;
+    right: 175px;
+    top: 105px;
+    z-index: 2;
+    height: 360px;
+    /* color: black; */
+    opacity: 0;
+    transition: .2s ease;  
+    p
+        font-size: 12px 
+
+.portfolio_project_links
+    position: absolute
+    width: 100%
+    height: 50px
+    bottom: 0
+    a
+        transition: transform .2s ease-out
+        color: $bolded-text-color
+        font-weight: 700
+        &:hover
+            transform: scale(1.2)
 
 // .info_toggle
 //     height: 35px
