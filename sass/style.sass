@@ -9,6 +9,15 @@ $bolded-text-color: #222222
 // $faded-text-color: #777777
 $faded-text-color: #636363
 
+@keyframes pulse 
+    0%
+        opacity: 0.8
+    50% 
+        opacity: 1
+    100%
+        opacity: 0.8
+
+
 @mixin brackets($type, $weight, $color)
     @if $type == curly
         &:before
@@ -65,6 +74,8 @@ $faded-text-color: #636363
       src: url('../font/portfolio.eot?78515472#iefix') format('embedded-opentype'),url('../font/portfolio.woff?78515472') format('woff'), url('../font/portfolio.ttf?78515472') format('truetype'),url('../font/portfolio.svg?78515472#portfolio') format('svg')
       font-weight: normal
       font-style: normal
+html
+    font-size: 14px
 
 * 
     margin: 0
@@ -74,7 +85,6 @@ a,
 a
     &:hover
         text-decoration: none
-
 
 section
     padding-top: 120px
@@ -201,7 +211,7 @@ section
 
 .about_description
     padding: 20px 12px   
-    line-height: 1.9rem 
+    line-height: 1.75rem 
     font-family: 'Encode Sans Expanded', sans-serif  
 
 .portfolio
@@ -225,22 +235,25 @@ section
     box-shadow: 0 0 20px 1px rgba(50, 50, 50, 0.85);
     transition: transform .5s ease-out
     z-index: 0
+    &:hover
+        img
+            filter: blur(5px) grayscale(100%)
+            transition: filter .3s .5s
+        
+        z-index: 1
+        .portfolio_project_layer
+            width: 930px
+            height: 930px
+            background-color: rgba(255, 255, 255, 0.8)
+            .portfolio_project_description
+                opacity: 1
+                transition: .1s .4s ease
     @include screen(mobile)
         margin: 25px auto
-    @include screen(no-mobile)    
+    @include screen(no-mobile)  
         &:hover
-            img
-                filter: blur(5px) grayscale(100%)
-                transition: filter .3s .5s
-            transform: scale(1.3)
-            z-index: 1
-            .portfolio_project_layer
-                width: 930px
-                height: 930px
-                background-color: rgba(255, 255, 255, 0.8)
-                .portfolio_project_description
-                    opacity: 1
-                    transition: .1s .4s ease
+            transform: scale(1.3)  
+        
     img
         display: block
         width: auto
@@ -289,22 +302,119 @@ section
 .portfolio_project_links
     position: absolute
     width: 100%
-    height: 50px
+    height: 70px
     bottom: 0
+    // .link
+    //     @include brackets(square, 600, #03a9f4)
+    //     transition: transform .2s ease-out
+    //     color: $bolded-text-color
+    //     font-weight: 700
+    //     font-size: 14px
+    //     &:hover
+    //         transform: scale(1.2)
     .link
-        @include brackets(square, 600, #03a9f4)
-        transition: transform .2s ease-out
+        display: block
+        background: white
+        border: 1px solid rgba(0,0,0,0)
         color: $bolded-text-color
+        padding: 10px 20px
+        overflow: hidden
+        max-width: 110px
+        width: 110px
+        box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2)
+        text-align: center
+        transition: box-shadow .3s
         font-weight: 700
         &:hover
-            transform: scale(1.2)
+            // border: 1px solid #404040
+            box-shadow: 4px 6px 17px 0px rgba(0, 0, 0, 0.7);
+    //     .link-content
+    //         position: relative
+    //         z-index: 3
+    // .pulse 
+    //     background-color: darken(white, 5%)
+    //     animation-timing-function: linear;      
+    //     &:hover 
+    //         animation: pulse 2s infinite;
+    //         background-color: #999999
+    //         .link-content 
+    //             color: white
+        
 
-.bg-dark
-    background-color: #444444 
+// .bg-dark
+//     background-color: #444444 
+
+.contact
+    background: url(../img/metal.jpg) 50% 50% no-repeat  
+
+    .form
+        margin-top: 35px
+        
+    .form-column
+        input,
+        textarea
+            width: 100%
+            // border-radius: 5px
+            border: 1px solid white
+            padding: 20px
+            font-weight: 700
+            font-family: 'Montserrat', sans-serif
+            font-size: 14px
+            display: block
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white
+            &:focus
+                outline: none
+                box-shadow: 0px 0px 5px $main-color
+            &::placeholder
+                text-transform: uppercase
+
+        input
+            height: 50px
+        textarea
+            height: 210px  
+            resize: none     
+        .special
+            display: none     
+
+    .form-group
+        margin: 30px 15px
+
+.contact_social-media
+    color: white
+    font-size: 25px
+    .social 
+        margin: 30px
+        a
+            color: white
+        .fa
+            height: 50px
+            width: 50px
+            line-height: 46px
+            border: 2px solid white
+            text-align: center
+#form_submit
+    width: 220px             
+.github
+    &:hover
+        background-color: #6e5494           
+
+.linkedin
+    &:hover
+        background-color: #0077b5
+
+.twitter
+    &:hover
+        background-color: #08a0e9
 
 
 footer
     height: 90px
+    background-color: #343434
+    a
+        color: white
+        &:hover
+            color: yellow
     
 
 // .info_toggle

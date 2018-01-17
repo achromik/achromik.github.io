@@ -24,6 +24,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/style.min.css">
+
+    //hide email from spam bots
+    <script type="text/javascript">
+        function gen_mail_to_link(lhs,rhs) {
+            document.write(lhs + "@" + rhs);
+        }
+    </script>
 </head>
 
 <body>
@@ -85,9 +92,9 @@
                                     <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v4. Strona w pełni RWD.</p>
                                 </div>
                                 <div class="portfolio_project_links d-flex justify-content-around align-items-center">
-                                    <a class="link" href="http://aleksanderchromik.pl/GoldenStudio">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/GoldenStudio">
                                         <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
-                                    <a class="link" href="https://github.com/achromik/GoldenStudio">
+                                    <a class="link" target="_blank" href="https://github.com/achromik/GoldenStudio">
                                         <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
                                 </div>
                             </div>
@@ -105,12 +112,13 @@
                             <div class="portfolio_project_description">
                                 <div class="p-5">
                                     <h4 class="text-center">Zakodowanie szablonu strony z PSD do HTML/CSS.</h4>
-                                    <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v3. Własny slider w JS (sekcja DESIGN). Strona w pełni RWD.</p>
+                                    <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v3. Własny slider w JS (sekcja
+                                        DESIGN). Strona w pełni RWD.</p>
                                 </div>
                                 <div class="portfolio_project_links d-flex justify-content-around align-items-center">
-                                    <a class="link" href="http://aleksanderchromik.pl/PhotoTime">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/PhotoTime">
                                         <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
-                                    <a class="link" href="https://github.com/achromik/PhotoTime">
+                                    <a class="link" target="_blank" href="https://github.com/achromik/PhotoTime">
                                         <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
                                 </div>
                             </div>
@@ -131,8 +139,10 @@
                                     <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v3. Strona w pełni RWD.</p>
                                 </div>
                                 <div class="portfolio_project_links d-flex justify-content-around align-items-center">
-                                    <a class="link" href="http://aleksanderchromik.pl/ActiveBox"><i class="fa fa-television" aria-hidden="true"></i> Demo</a>
-                                    <a class="link" href="https://github.com/achromik/ActiveBox"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/ActiveBox">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/ActiveBox">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -152,9 +162,9 @@
                                     <p class="text-justify">Pierwszy, samodzielnie zakodowany szablon PSD. Użyte technologie: HTML, CSS</p>
                                 </div>
                                 <div class="portfolio_project_links d-flex justify-content-around align-items-center">
-                                    <a class="link" href="http://aleksanderchromik.pl/PicturePerfectProject">
-                                        <i class="fa fa-television" aria-hidden="true"></i> Live</a>
-                                    <a class="link" href="https://github.com/achromik/PicturePerfectProject">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/PicturePerfectProject">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/PicturePerfectProject">
                                         <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
                                 </div>
                             </div>
@@ -172,12 +182,12 @@
                             <div class="portfolio_project_description">
                                 <div class="p-5">
                                     <h4 class="text-center">Papier Kamień Nożyce </h4>
-                                    <p class="text-justify">Prosta gra. Użyte technologie: HTML, CSS, Bootstrap v3, JS</p>
+                                    <p class="text-justify">Popularna gra przy użyciu technologi: HTML, CSS, Bootstrap v3, JS</p>
                                 </div>
                                 <div class="portfolio_project_links d-flex justify-content-around align-items-center">
-                                    <a class="link" href="http://aleksanderchromik.pl/RockPaperScissors">
-                                        <i class="fa fa-television" aria-hidden="true"></i> Live</a>
-                                    <a class="link" href="https://github.com/achromik/RockPaperScissors">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/RockPaperScissors">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/RockPaperScissors">
                                         <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
                                 </div>
                             </div>
@@ -192,26 +202,73 @@
         </div>
 
     </section>
-    
-    <section id="contact" class="contact bg-dark">
+
+    <section id="contact" class="contact container-fluid d-flex align-items-center justify-content-center flex-column">
         <h1 class="text-center text-uppercase text-white">Kontakt</h1>
-        <h3 class="text-center text-muted ">Chcesz mnie zatrudnić lub nawiązać współpracę?! Świetnie!</h3>    
+        <h3 class="text-center text-muted ">Chcesz mnie zatrudnić lub nawiązać współpracę?! Świetnie!</h3>
+        <div class="container d-flex justify-content-start">
+            <div class="w-50 d-flex justify-content-center align-items-center flex-column">
+                <h4 class="text-white">606 829 863</h4>
+                <h4 id="extra" class="text-white">
+                        <script type="text/javascript"> 
+                            gen_mail_to_link('mail','aleksanderchromik.pl');
+                        </script>
+                        <noscript>
+                          <em>Adres email chroniony przez JavaScript. Włącz JavaScript aby zobaczyć email.</em>
+                        </noscript>
+                </h4>
+                <div class="contact_social-media d-flex">
+                    <div class="social linkedin">
+                        <a href="https://www.linkedin.com/in/aleksander-chromik/">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="social github">
+                        <a href="https://github.com/achromik/">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="social twitter">
+                        <a href="https://twitter.com/Alex_Chromik">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-50 ">
+                <form id="contact_form" class="form" enctype="multipart/form-data" method="post">
+                    <div class="wrapper d-flex align-items-center justify-content-center w-100">
+                        <div class="form-column w-100">
+                            <div class="form-group">
+                                <input  type="text" placeholder="Twoje imię *" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <input  type="email" placeholder="Twój email *" name="email" required>
+                                <input class="special" type="email" placeholder="Your email *" name="email2">
+                            </div>
+                            <!-- </div>
+                    <div class="form-column w-100"> -->
+                            <div class="form-group">
+                                <textarea  placeholder="Wiadomość *" name="message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="form_submit" class="btn btn-success py-3 text-uppercase mx-auto d-block " type="submit">Wyślij wiadomość</button>
+                </form>
+            </div>
+
+        </div>
     </section>
 
-    <footer class="container d-flex justify-content-center align-items-center">
-        <p class="text-center">© Copyright 2018 <a class=" text-dark" href="http://aleksanderchromik.pl"> aleksanderchromik.pl</a></br>
-        Designed & coded with <i class=" text-danger fa fa-heart" aria-hidden="true"></i> by <b>myself</b></p>
+    <footer class="container-fluid d-flex justify-content-center align-items-center">
+        <p class="text-center  text-white">© Copyright 2018
+            <a href="http://aleksanderchromik.pl"> aleksanderchromik.pl</a>
+            </br>
+            Designed & coded with
+            <i class=" text-danger fa fa-heart" aria-hidden="true"></i> by
+            <b>myself</b>
+        </p>
     </footer>
-
-
-    <!-- <div class="info_toggle">
-        <img src="./img/danger.png" alt="">
-    </div>
-    <section class="info">
-        <h3>Informacja</h3>
-        <p>Witam Cię na mojej stronie, która w tej chwili jest w trakcie budowy, ale już wkrótce pochwalę się tutaj moim portfolio. Już teraz zapraszam Cię do następnej wizyty.</p>
-    </section> -->
-
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -220,6 +277,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <script src="./js/scripts.js"></script>
 

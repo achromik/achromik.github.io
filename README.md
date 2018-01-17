@@ -6,4 +6,5 @@ Used technlogies:
 - Sass
 - Bootstrap v4
 - JS 
+- jQuery
  
