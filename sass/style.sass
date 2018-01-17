@@ -1,59 +1,143 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Encode+Sans+Expanded:300,400,600')
+// @import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Encode+Sans+Expanded:300,400,600')
 
-@mixin flex 
-    display: flex
-    align-items: center
-    justify-content: center
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i&subset=latin-ext|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600')
+
+$main-color: #fed136
+$darker-bg-color:  #f7f7f7
+$bolded-text-color: #222222
+
+// $faded-text-color: #777777
+$faded-text-color: #636363
+
+@keyframes pulse 
+    0%
+        opacity: 0.8
+    50% 
+        opacity: 1
+    100%
+        opacity: 0.8
+
+
+@mixin brackets($type, $weight, $color)
+    @if $type == curly
+        &:before
+            content: '{'
+        &:after
+            content: '}'
+
+    @else if $type == square
+        &:before
+            content: '['
+        &:after
+            content: ']' 
+
+    &:before,        
+    &:after
+        font-weight: $weight
+        position: relative
+        top: .1em
+        font-size: 1.65em
+        color: $color
+        padding: 0 15px
+        font-family: 'Encode Sans Expanded', sans-serif  
+
+
+// @mixin flex 
+//     display: flex
+//     align-items: center
+//     justify-content: center
 
 @mixin screen($size)
-    $desktop: "(min-width: 1024px)";
-    $tablet: "(max-width: 1023px)";
-    $mobile: "(max-width: 475px)";
+    $desktop: "(min-width: 992px)"
+    $tablet: "(max-width: 991.99px)"
+    $mobile: "(max-width: 475px)"
+    $no-mobile: "(min-width: 475.01px)"
     @if $size == desktop 
         @media only screen and #{$desktop} 
-            @content;
+            @content
     @else if $size == tablet 
         @media only screen and #{$tablet} 
-            @content;
+            @content
     @else if $size == mobile 
         @media only screen and #{$mobile} 
-            @content;
+            @content
+    @else if $size == no-mobile 
+        @media only screen and #{$no-mobile} 
+            @content
     @else 
         @media only screen and #{$size} 
-            @content;
-
-
+            @content
 
 @font-face 
-      font-family: 'portfolio';
-      src: url('../font/portfolio.eot?78515472');
-      src: url('../font/portfolio.eot?78515472#iefix') format('embedded-opentype'),url('../font/portfolio.woff?78515472') format('woff'), url('../font/portfolio.ttf?78515472') format('truetype'),url('../font/portfolio.svg?78515472#portfolio') format('svg');
-      font-weight: normal;
-      font-style: normal;
+      font-family: 'portfolio'
+      src: url('../font/portfolio.eot?78515472')
+      src: url('../font/portfolio.eot?78515472#iefix') format('embedded-opentype'),url('../font/portfolio.woff?78515472') format('woff'), url('../font/portfolio.ttf?78515472') format('truetype'),url('../font/portfolio.svg?78515472#portfolio') format('svg')
+      font-weight: normal
+      font-style: normal
+html
+    font-size: 14px
 
 * 
     margin: 0
     padding: 0
 
-a   
-    text-decoration: none
+a,
+a
+    &:hover
+        text-decoration: none
 
-body
-    @include flex
-    flex-direction: column
-    background: url(../img/bg.jpg) 50% 50%
-    background-size: cover
-    height: 100vh
-    font-family: 'Encode Sans Expanded', sans-serif
-   
+section
+    padding-top: 120px
+    padding-bottom: 120px
+    h1
+        font-family: 'Montserrat', sans-serif
+        font-weight: 700
+        font-size: 40px
+        color: $bolded-text-color
+        margin-bottom: 10px
+        letter-spacing: 2px
+    h3
+        font-family: 'Noto Serif', serif
+        font-size: 16px
+        color: $faded-text-color
+    h4
+        font-family: 'Montserrat', sans-serif
+        font-size: 18px
+        font-weight: 700
+    h5
+        font-family: 'Montserrat', sans-serif
+        font-size: 16px
+        font-weight: 700
+    h6
+        font-family: 'Roboto Slab', serif      
+        font-size: 14px
+        font-weight: 400
+    p
+        padding: 10px 12px
+        color: $faded-text-color
+        font-family: 'Roboto Slab', serif      
+        width: 100%    
+    q
+        font-weight: 700
+        letter-spacing: 2px 
+
+// body
+//     @include flex
+//     flex-direction: column
+//     background: url(../img/bg.jpg) 50% 50%
+//     background-size: cover
+//     height: 100vh
+//     font-family: 'Encode Sans Expanded', sans-serif  
 
 .welcome
-    @include flex
-    flex-direction: column
+    // @include flex
+    // flex-direction: column
+    background: linear-gradient(rgba(4, 31, 49, 0.85), rgba(4, 4, 4, 0.9)), url(../img/bg.jpg) 50% 50%
+    background-size: cover
+    background-attachment: fixed
     background-color: rgba(37, 37, 37, 0.85)
     color: #ccc
     height: 100vh
-    width: 100vw
 
 .welcome_button
     height: 170px
@@ -72,7 +156,6 @@ body
     text-shadow: 0 0 20px #000
     @include screen('mobile')
         font-size: 33px
-    
 
 .welcome_name-bold
     font-weight: 900
@@ -82,19 +165,7 @@ body
     margin-bottom: 20px
     color: #31c2e4
     font-size: 2em
-    &:before
-        content: '{'
-    &:after
-        content: '}'
-    &:before,        
-    &:after
-        font-weight: 600
-        position: relative
-        top: .1em
-        font-size: 1.65em
-        color: yellow
-        padding: 0 15px
-    
+    @include brackets(curly, 600, yellow)
 
 .welcome_media
     color: #ae81ff
@@ -104,79 +175,302 @@ body
         padding-right: 10px
         color: #f92672
 
-
-            
-
 .welcome_icons
     margin-top: 30px        
     [class*="icon-"]
         font-size: 30px
         color: white
-        padding: 0 10px
-        
+        padding: 0 10px       
         &:before
             transition: .3s
             transform: rotate(30deg)
-
     a:hover
         [class*="icon-"]:before
             transform: scale(1.2) rotate(0deg)
-
     .icon-application
         font-size: 26px
         top: -2px
         position: relative
-    
-.info_toggle
-    height: 35px
+
+.wrapper
+    margin-top: 60px
+
+.about
+    .wrapper
+        width: 75%
+        @include screen('tablet')
+            width: 95%
+.about_image
+    width: 350px
+    margin: 20px
+    @include screen('tablet')
+        width: 30vw
+        min-width: 180px
+    @include screen('(max-width: 575.99px)')   
+        display: none 
+
+.about_description
+    padding: 20px 12px   
+    line-height: 1.75rem 
+    font-family: 'Encode Sans Expanded', sans-serif  
+
+.portfolio
+    background: linear-gradient(rgba(245, 245, 245, 0.5), rgba(249, 249, 249, 0.5)), url(../img/portfolio.jpg) 50% 50%
     background-size: cover
-    z-index: 4
-    width: 40px
-    position: absolute
-    left: 0
-    top: 30px
-    background-color: rgba(256,256,256,.2)
-    padding: 13px
-    border-top-right-radius: 10px
-    border-bottom-right-radius: 10px
-    border: 1px solid #444;
-    box-shadow: 2px 2px 10px rgba(0,0,0, .5)
-    perspective: 100px
-    img
-        height: 35px
-        animation: swingY 2s linear 0s infinite normal
+    background-attachment: fixed
+    h3  
+        color: #646464
+
+
+.portfolio_projects
+    // max-width: 975px
+    padding: 0
+    margin-top: 40px
+
+.portfolio_project
+    background-color: white
+    flex: 0 0 25%
+    margin: 25px 17px
+    min-width: 290px
+    box-shadow: 0 0 20px 1px rgba(50, 50, 50, 0.85);
+    transition: transform .5s ease-out
+    z-index: 0
     &:hover
-         + .info
-            bottom: 0
+        img
+            filter: blur(5px) grayscale(100%)
+            transition: filter .3s .5s
+        
+        z-index: 1
+        .portfolio_project_layer
+            width: 930px
+            height: 930px
+            background-color: rgba(255, 255, 255, 0.8)
+            .portfolio_project_description
+                opacity: 1
+                transition: .1s .4s ease
+    @include screen(mobile)
+        margin: 25px auto
+    @include screen(no-mobile)  
+        &:hover
+            transform: scale(1.3)  
+        
+    img
+        display: block
+        width: auto
+        transition: filter .1s
 
-.info
-    width: 75%
-    text-align: center
-    color: #ccc
-    position: fixed
-    bottom: -230px
-    transition: .5s
-    background-color: rgb(43, 42, 42);
-    box-shadow: 2px 2px 10px rgba(0,0,0, .5);
-    padding: 20px 20px 40px 20px;
-    border-top-right-radius: 10px
-    border-top-left-radius: 10px
-    left: 0
-    right: 0
-    margin: 0 auto
-    h3
-        color: #fff
-        padding-bottom: 20px
+.portfolio_project_image
+    position: relative        
+    overflow: hidden
 
-@keyframes swingY
-    25%
-        transform: rotateY(90deg)
-    50%
-        transform: rotateY(180deg)
-    75%
-        transform: rotateY(270deg)    
-    100%
-        transform: rotateY(360deg)
+.portfolio_project_details
+    padding: 25px 0
+    background-color: $bolded-text-color
+    h4
+        @include brackets(curly, 600, yellow)
+    p
+        padding: 0
+        margin: 0
+        font-family: 'Noto Serif', serif
+    h4
+        margin: 0
+        color: white
+
+
+.portfolio_project_layer
+    width: 0
+    height: 0
+    position: absolute
+    background-color: rgba(34, 34, 34, 1)
+    transition: .4s 
+    border-radius: 50%
+    transform: translateX(-50%) translateY(-50%)
+
+.portfolio_project_description
+    width: 290px;
+    position: absolute;
+    right: 175px;
+    top: 105px;
+    z-index: 2;
+    height: 360px;
+    /* color: black; */
+    opacity: 0;
+    transition: .2s ease;  
+    p
+        font-size: 12px 
+
+.portfolio_project_links
+    position: absolute
+    width: 100%
+    height: 70px
+    bottom: 0
+    // .link
+    //     @include brackets(square, 600, #03a9f4)
+    //     transition: transform .2s ease-out
+    //     color: $bolded-text-color
+    //     font-weight: 700
+    //     font-size: 14px
+    //     &:hover
+    //         transform: scale(1.2)
+    .link
+        display: block
+        background: white
+        border: 1px solid rgba(0,0,0,0)
+        color: $bolded-text-color
+        padding: 10px 20px
+        overflow: hidden
+        max-width: 110px
+        width: 110px
+        box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2)
+        text-align: center
+        transition: box-shadow .3s
+        font-weight: 700
+        &:hover
+            // border: 1px solid #404040
+            box-shadow: 4px 6px 17px 0px rgba(0, 0, 0, 0.7);
+    //     .link-content
+    //         position: relative
+    //         z-index: 3
+    // .pulse 
+    //     background-color: darken(white, 5%)
+    //     animation-timing-function: linear;      
+    //     &:hover 
+    //         animation: pulse 2s infinite;
+    //         background-color: #999999
+    //         .link-content 
+    //             color: white
+        
+
+// .bg-dark
+//     background-color: #444444 
+
+.contact
+    background: url(../img/metal.jpg) 50% 50% no-repeat  
+    background-size: cover
+    .wrapper
+        @include screen('(max-width: 767.99px)')
+            flex-direction: column
+    .form
+        margin-top: 35px
+    .form-column
+        input,
+        textarea
+            width: 100%
+            // border-radius: 5px
+            border: 1px solid white
+            padding: 20px
+            font-weight: 700
+            font-family: 'Montserrat', sans-serif
+            font-size: 14px
+            display: block
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white
+            &:focus
+                outline: none
+                box-shadow: 0px 0px 5px $main-color
+            &::placeholder
+                text-transform: uppercase
+
+        input
+            height: 50px
+        textarea
+            height: 210px  
+            resize: none     
+        .special
+            display: none     
+
+    .form-group
+        margin: 30px 15px
+
+.contact_social-media
+    color: white
+    font-size: 25px
+    .social 
+        margin: 30px
+        @include screen(mobile)
+            margin: 30px 20px
+        a
+            color: white
+        .fa
+            height: 50px
+            width: 50px
+            line-height: 46px
+            border: 2px solid white
+            text-align: center
+#form_submit
+    width: 220px             
+.github
+    &:hover
+        background-color: #6e5494           
+
+.linkedin
+    &:hover
+        background-color: #0077b5
+
+.twitter
+    &:hover
+        background-color: #08a0e9
+
+
+footer
+    height: 90px
+    background-color: #343434
+    a
+        color: white
+        &:hover
+            color: yellow
+    
+
+// .info_toggle
+//     height: 35px
+//     background-size: cover
+//     z-index: 4
+//     width: 40px
+//     position: absolute
+//     left: 0
+//     top: 30px
+//     background-color: rgba(256,256,256,.2)
+//     padding: 13px
+//     border-top-right-radius: 10px
+//     border-bottom-right-radius: 10px
+//     border: 1px solid #444
+//     box-shadow: 2px 2px 10px rgba(0,0,0, .5)
+//     perspective: 100px
+//     img
+//         height: 35px
+//         animation: swingY 2s linear 0s infinite normal
+//     &:hover
+//          + .info
+//             bottom: 0
+
+// .info
+//     width: 75%
+//     text-align: center
+//     color: #ccc
+//     position: fixed
+//     bottom: -230px
+//     transition: .5s
+//     background-color: rgb(43, 42, 42)
+//     box-shadow: 2px 2px 10px rgba(0,0,0, .5)
+//     padding: 20px 20px 40px 20px
+//     border-top-right-radius: 10px
+//     border-top-left-radius: 10px
+//     left: 0
+//     right: 0
+//     margin: 0 auto
+//     h3
+//         color: #fff
+//         padding-bottom: 20px
+
+// @keyframes swingY
+//     25%
+//         transform: rotateY(90deg)
+//     50%
+//         transform: rotateY(180deg)
+//     75%
+//         transform: rotateY(270deg)    
+//     100%
+//         transform: rotateY(360deg)
 
 
 

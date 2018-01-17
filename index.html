@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aleksander Chromik - Web Developer</title>
 
-    <meta property="og:url"                content="http://aleksanderchromik.pl" />
-    <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Aleksander Chromik - Web Developer" />
-    <meta property="og:description"        content="W połowie 2017 roku podjąłem decyzję, aby rozwijać się w kierunku web developmentu. Programowanie od zawsze było w kręgu moich zainteresowań. Jestem osobą, którą cechuje sumienność, ambicja oraz łatwość w  nawiązywaniu kontaktów. Lubię tworzyć nowe rzeczy, poszukiwać rozwiązań problemów. W życiu staram się kierować dewizą: „You can have results or excuses. Not both.”" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/foto.jpg" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/main.png" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/ActiveBox.png" />
-    <meta property="og:image"              content="http://aleksanderchromik.pl/img/PhotoTime.png" />
-    
+    <meta property="og:url" content="http://aleksanderchromik.pl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aleksander Chromik - Web Developer" />
+    <meta property="og:description" content="W połowie 2017 roku podjąłem decyzję, aby rozwijać się w kierunku web developmentu. Programowanie od zawsze było w kręgu moich zainteresowań. Jestem osobą, którą cechuje sumienność, ambicja oraz łatwość w  nawiązywaniu kontaktów. Lubię tworzyć nowe rzeczy, poszukiwać rozwiązań problemów. W życiu staram się kierować dewizą: „You can have results or excuses. Not both.”"
+    />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/foto.jpg" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/main.png" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/ActiveBox.png" />
+    <meta property="og:image" content="http://aleksanderchromik.pl/img/PhotoTime.png" />
+
     <meta property="fb:app_id" content="136469600406700" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- //hide email from spam bots -->
+    <script type="text/javascript">
+        function gen_mail_to_link(lhs,rhs) {
+            document.write(lhs + "@" + rhs);
+        }
+    </script>
 </head>
+
 <body>
-    <section class="welcome">
+    <header class="welcome d-flex justify-content-center align-items-center flex-column">
         <div class="welcome_button"></div>
-        <h1 class="welcome_name">Aleksander<span class="welcome_name-bold">Chromik</span></h1>
+        <h1 class="welcome_name">Aleksander
+            <span class="welcome_name-bold">Chromik</span>
+        </h1>
         <h2 class="welcome_desc">Web Developer</h2>
-        <div class="welcome_media">
+        <!-- <div class="welcome_media">
             <p><i class="icon-phone"></i>606 829 863</p>
             <p><i class="icon-mail"></i>mail@aleksanderchromik.pl</p>
             <div class="welcome_icons">
@@ -40,14 +54,233 @@
                     <i class="icon-application"></i>
                 </a>
             </div>
+        </div> -->
+    </header>
+
+    <section id="about" class="about container d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-center text-uppercase">O mnie</h1>
+        <h3 class="text-center ">Czyli co? jak? i dlaczego?</h3>
+        <div class="wrapper d-flex justify-content-center align-items-start">
+            <div class="about_leftside">
+                <img class="about_image" src="./img/laptop.jpeg" alt="Laptop and book on a desk">
+            </div>
+            <div class="about-rightside">
+                <p class="about_description text-justify">Pasja do programowania narodziła się gdy miałem 13 lat. Napisałem wtedy swój pierwszy skrypt – program umożliwiający
+                    edycję nut (Amiga500 – AMOS). Rok temu postanowiłem rozwijać swoje umiejętności w kierunku web developmentu.
+                    W grudniu 2017 roku ukończyłem kurs Web Developer na kodilla.com. Lubię tworzyć nowe rzeczy, poszukiwać
+                    rozwiązań problemów. W życiu staram się kierować dewizą:
+                    <q>You can have results or excuses. Not both.</q>
+                    Kiedy nie siedzę przed komputerem to biegam… ale to już jest całlkiem inna historia.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="porfolio" class="portfolio container-fluid d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-center text-uppercase">Portfolio</h1>
+        <h3 class="text-center">
+            <q>Ciągle się jescze uczę.</q> - Michał Anioł Buonarroti w wieku 87 lat.</h3>
+        <div class="wrapper d-flex align-items-center justify-content-around flex-column  ">
+            <div class="portfolio_projects container d-flex align-items-center justify-content-center align-self-stretch flex-wrap">
+                <div class="portfolio_project">
+                    <div class="portfolio_project_image">
+                        <img src="./img/Golden.jpg" alt="Screenshot from website template Golden Studio">
+                        <div class="portfolio_project_layer">
+                            <div class="portfolio_project_description">
+                                <div class="p-5">
+                                    <h4 class="text-center">Zakodowanie szablonu strony z PSD do HTML/CSS.</h4>
+                                    <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v4. Strona w pełni RWD.</p>
+                                </div>
+                                <div class="portfolio_project_links d-flex justify-content-around align-items-center">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/GoldenStudio">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/GoldenStudio">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project_details">
+                        <h4 class="text-center">GoldenStudio</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="portfolio_project">
+                    <div class="portfolio_project_image">
+                        <img src="./img/photoapp.jpg" alt="Screenshot from website template PhotoTime">
+                        <div class="portfolio_project_layer">
+                            <div class="portfolio_project_description">
+                                <div class="p-5">
+                                    <h4 class="text-center">Zakodowanie szablonu strony z PSD do HTML/CSS.</h4>
+                                    <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v3. Własny slider w JS (sekcja
+                                        DESIGN). Strona w pełni RWD.</p>
+                                </div>
+                                <div class="portfolio_project_links d-flex justify-content-around align-items-center">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/PhotoTime">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/PhotoTime">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project_details">
+                        <h4 class="text-center">PhotoTime</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="portfolio_project">
+                    <div class="portfolio_project_image">
+                        <img src="./img/activebox.jpg" alt="Screenshot from website template ActiveBox">
+                        <div class="portfolio_project_layer">
+                            <div class="portfolio_project_description">
+                                <div class="p-5">
+                                    <h4 class="text-center">Zakodowanie szablonu strony z PSD do HTML/CSS.</h4>
+                                    <p class="text-justify">Użyte technologie: HTML, CSS, Sass, JavaScript, Bootstrap v3. Strona w pełni RWD.</p>
+                                </div>
+                                <div class="portfolio_project_links d-flex justify-content-around align-items-center">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/ActiveBox">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/ActiveBox">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project_details">
+                        <h4 class="text-center">ActiveBox</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="portfolio_project">
+                    <div class="portfolio_project_image">
+                        <img src="./img/pictureperfect.jpg" alt="Screenshot from website template PicturePerfect">
+                        <div class="portfolio_project_layer">
+                            <div class="portfolio_project_description">
+                                <div class="p-5">
+                                    <h4 class="text-center">Zakodowanie szablonu z PSD do HTML/CSS.</h4>
+                                    <p class="text-justify">Pierwszy, samodzielnie zakodowany szablon PSD. Użyte technologie: HTML, CSS</p>
+                                </div>
+                                <div class="portfolio_project_links d-flex justify-content-around align-items-center">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/PicturePerfectProject">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/PicturePerfectProject">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project_details">
+                        <h4 class="text-center">PicturePerfect</h4>
+                        <p class="text-center">PSD to HTML</p>
+                    </div>
+                </div>
+                <div class="portfolio_project">
+                    <div class="portfolio_project_image">
+                        <img src="./img/RPS.jpg" alt="Simple game Rock Paper Scissors">
+                        <div class="portfolio_project_layer">
+                            <div class="portfolio_project_description">
+                                <div class="p-5">
+                                    <h4 class="text-center">Papier Kamień Nożyce </h4>
+                                    <p class="text-justify">Popularna gra przy użyciu technologi: HTML, CSS, Bootstrap v3, JS</p>
+                                </div>
+                                <div class="portfolio_project_links d-flex justify-content-around align-items-center">
+                                    <a class="link" target="_blank" href="http://aleksanderchromik.pl/RockPaperScissors">
+                                        <i class="fa fa-television" aria-hidden="true"></i> Demo</a>
+                                    <a class="link" target="_blank" href="https://github.com/achromik/RockPaperScissors">
+                                        <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project_details">
+                        <h4 class="text-center">RockPaperScissors</h4>
+                        <p class="text-center">Simple game in JS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact" class="contact container-fluid d-flex align-items-center justify-content-center flex-column">
+        <h1 class="text-center text-uppercase text-white">Kontakt</h1>
+        <h3 class="text-center text-muted ">Chcesz mnie zatrudnić lub nawiązać współpracę?! Świetnie!</h3>
+        <div class="wrapper container d-flex justify-content-start">
+            <div class= "w-100 d-flex justify-content-center align-items-center flex-column">
+                <h4 class="text-white">606 829 863</h4>
+                <h4 id="extra" class="text-white">
+                        <script type="text/javascript"> 
+                            gen_mail_to_link('mail','aleksanderchromik.pl');
+                        </script>
+                        <noscript>
+                          <em>Adres email chroniony przez JavaScript. Włącz JavaScript aby zobaczyć email.</em>
+                        </noscript>
+                </h4>
+                <div class="contact_social-media d-flex">
+                    <div class="social linkedin">
+                        <a href="https://www.linkedin.com/in/aleksander-chromik/">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="social github">
+                        <a href="https://github.com/achromik/">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="social twitter">
+                        <a href="https://twitter.com/Alex_Chromik">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" w-100">
+                <form id="contact_form" class="form" enctype="multipart/form-data" method="post">
+                    <div class="wrapper d-flex align-items-center justify-content-center w-100">
+                        <div class="form-column w-100">
+                            <div class="form-group">
+                                <input  type="text" placeholder="Twoje imię *" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <input  type="email" placeholder="Twój email *" name="email" required>
+                                <input class="special" type="email" placeholder="Your email *" name="email2">
+                            </div>
+                            <!-- </div>
+                    <div class="form-column w-100"> -->
+                            <div class="form-group">
+                                <textarea  placeholder="Wiadomość *" name="message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="form_submit" class="btn btn-success py-3 text-uppercase mx-auto d-block " type="submit">Wyślij wiadomość</button>
+                </form>
+            </div>
+
         </div>
     </section>
-    <div class="info_toggle">
-        <img src="./img/danger.png" alt="">
-    </div>
-    <section class="info">
-        <h3>Informacja</h3>
-        <p>Witam Cię na mojej stronie, która w tej chwili jest w trakcie budowy, ale już wkrótce pochwalę się tutaj moim portfolio. Już teraz zapraszam Cię do następnej wizyty.</p>
-    </section>
+
+    <footer class="container-fluid d-flex justify-content-center align-items-center">
+        <p class="text-center  text-white">© Copyright 2018
+            <a href="http://aleksanderchromik.pl"> aleksanderchromik.pl</a>
+            </br>
+            Designed & coded with
+            <i class=" text-danger fa fa-heart" aria-hidden="true"></i> by
+            <b>myself</b>
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script src="./js/scripts.js"></script>
+
 </body>
+
 </html>
