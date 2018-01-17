@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i&subset=latin-ext|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600");
 @keyframes pulse {
   0% {
     opacity: 0.8; }
@@ -270,7 +270,11 @@ section {
       box-shadow: 4px 6px 17px 0px rgba(0, 0, 0, 0.7); }
 
 .contact {
-  background: url(../img/metal.jpg) 50% 50% no-repeat; }
+  background: url(../img/metal.jpg) 50% 50% no-repeat;
+  background-size: cover; }
+  @media only screen and (max-width: 767.99px) {
+    .contact .wrapper {
+      flex-direction: column; } }
   .contact .form {
     margin-top: 35px; }
   .contact .form-column input,
@@ -306,6 +310,9 @@ section {
   font-size: 25px; }
   .contact_social-media .social {
     margin: 30px; }
+    @media only screen and (max-width: 475px) {
+      .contact_social-media .social {
+        margin: 30px 20px; } }
     .contact_social-media .social a {
       color: white; }
     .contact_social-media .social .fa {
