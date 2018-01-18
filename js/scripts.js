@@ -16,15 +16,30 @@ var target = location.hash,
         waypoints();
     }
 
+    //collapse menu bar if click on menu item
+    $('nav').on('click','.navbar-collapse.show', function(event) {
+        console.log(event.target);
+        if(  $(event.target).is('a') ) {
+            $(this).collapse('hide');
+        }
+    });
+
     //Smooth scroll on menu click
-    $('.nav-link[href^="#"]').each(function () {
+    $('.nav-item .nav-link[href^="#"]').each(function () {
         var target = $($(this).attr('href'));
 
+        
+
         $(this).click(function () {
+            timeout = setTimeout(function() {
+                $('.navbar-collapse.show').collapse('hide');
+            },800);
             win.stop().animate({ scrollTop: target.offset().top - offset }, 600);
             return false;
         });
     });
+
+
 })();
 
 

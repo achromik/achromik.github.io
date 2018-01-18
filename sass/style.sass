@@ -136,7 +136,9 @@ section
 .active
     .nav-link
         color: #31c2e4!important
-    @include brackets(curly, 600, yellow)
+        span
+            transform: translateY(-33%);
+            @include brackets(curly, 600, yellow)
 
 
 
@@ -152,7 +154,9 @@ nav
         left: 0
         right: 0
         z-index: -1
-    // @include screen(mobile)
+        @include screen(tablet)
+            visibility: visible!important
+            opacity: 1!important
     
 
 
@@ -165,14 +169,26 @@ nav
     transition: .4s
     span
         font-weight: 900
-    @include screen(mobile)
+    @include screen(tablet)
         font-size: 20px
+        visibility: visible!important
+        opacity: 1!important
 
 .nav-link
     display: inline-block
-.nav-item,
-.nav-link
-    line-height: 1.65em        
+    span
+        display: block
+    @include screen(tablet)
+        display: block
+.nav-item
+    height: 52px;
+    transform: translateY(16%);
+    @include screen(tablet)
+        text-align: center
+
+// .nav-item,
+// .nav-link
+//     line-height: 1.65em        
 
 
 
