@@ -27,16 +27,46 @@
 
     <!-- //hide email from spam bots -->
     <script type="text/javascript">
-        function gen_mail_to_link(lhs,rhs) {
+        function gen_mail_to_link(lhs, rhs) {
             document.write(lhs + "@" + rhs);
         }
     </script>
 </head>
 
 <body>
-    <header class="welcome d-flex justify-content-center align-items-center flex-column">
+    <nav id="navigation" class="container-fluid fixed-top navbar navbar-expand-md navbar-dark ">
+        <div class="bg container-fluid "></div>
+        <div class="container">
+            <a class="navbar-brand page-name " href="#">
+                Aleksander
+                <span>Chromik</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavi" aria-controls="navbarNavi"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarNavi">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-uppercase" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#about">O mnie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id='home' class="welcome d-flex justify-content-center align-items-center flex-column">
         <div class="welcome_button"></div>
-        <h1 class="welcome_name">Aleksander
+        <h1 class="welcome_name page-name">Aleksander
             <span class="welcome_name-bold">Chromik</span>
         </h1>
         <h2 class="welcome_desc">Web Developer</h2>
@@ -76,7 +106,7 @@
 
     </section>
 
-    <section id="porfolio" class="portfolio container-fluid d-flex justify-content-center align-items-center flex-column">
+    <section id="portfolio" class="portfolio container-fluid d-flex justify-content-center align-items-center flex-column">
         <h1 class="text-center text-uppercase">Portfolio</h1>
         <h3 class="text-center">
             <q>Ciągle się jescze uczę.</q> - Michał Anioł Buonarroti w wieku 87 lat.</h3>
@@ -207,15 +237,17 @@
         <h1 class="text-center text-uppercase text-white">Kontakt</h1>
         <h3 class="text-center text-muted ">Chcesz mnie zatrudnić lub nawiązać współpracę?! Świetnie!</h3>
         <div class="wrapper container d-flex justify-content-start">
-            <div class= "w-100 d-flex justify-content-center align-items-center flex-column">
-                <h4 class="text-white">606 829 863</h4>
+            <div class="w-100 d-flex justify-content-center align-items-center flex-column">
+                <h4 class="text-white">
+                    <i class="fa fa-phone" aria-hidden="true"></i> 606 829 863</h4>
                 <h4 id="extra" class="text-white">
-                        <script type="text/javascript"> 
-                            gen_mail_to_link('mail','aleksanderchromik.pl');
-                        </script>
-                        <noscript>
-                          <em>Adres email chroniony przez JavaScript. Włącz JavaScript aby zobaczyć email.</em>
-                        </noscript>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <script type="text/javascript"> 
+                        gen_mail_to_link('mail', 'aleksanderchromik.pl');
+                    </script>
+                    <noscript>
+                        <em>Adres email chroniony przez JavaScript. Włącz JavaScript aby zobaczyć email.</em>
+                    </noscript>
                 </h4>
                 <div class="contact_social-media d-flex">
                     <div class="social linkedin">
@@ -237,19 +269,19 @@
             </div>
             <div class=" w-100">
                 <form id="contact_form" class="form" enctype="multipart/form-data" method="post">
-                    <div class="wrapper d-flex align-items-center justify-content-center w-100">
+                    <div class="d-flex align-items-center justify-content-center w-100">
                         <div class="form-column w-100">
                             <div class="form-group">
-                                <input  type="text" placeholder="Twoje imię *" name="name" required>
+                                <input type="text" placeholder="Twoje imię *" name="name" required>
                             </div>
                             <div class="form-group">
-                                <input  type="email" placeholder="Twój email *" name="email" required>
+                                <input type="email" placeholder="Twój email *" name="email" required>
                                 <input class="special" type="email" placeholder="Your email *" name="email2">
                             </div>
                             <!-- </div>
                     <div class="form-column w-100"> -->
                             <div class="form-group">
-                                <textarea  placeholder="Wiadomość *" name="message" required></textarea>
+                                <textarea placeholder="Wiadomość *" name="message" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -271,7 +303,7 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

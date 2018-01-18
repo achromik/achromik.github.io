@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i&subset=latin-ext|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600&subset=latin-ext");
 @keyframes pulse {
   0% {
     opacity: 0.8; }
@@ -15,7 +15,7 @@
   font-style: normal; }
 
 html {
-  font-size: 14px; }
+  font-size: 15px; }
 
 * {
   margin: 0;
@@ -60,6 +60,60 @@ section {
     font-weight: 700;
     letter-spacing: 2px; }
 
+.visible {
+  opacity: 1 !important; }
+
+.active .nav-link {
+  color: #31c2e4 !important; }
+
+.active:before {
+  content: '{'; }
+
+.active:after {
+  content: '}'; }
+
+.active:before, .active:after {
+  font-weight: 600;
+  position: relative;
+  top: 5%;
+  font-size: 1.65em;
+  color: yellow;
+  padding: 0 15px;
+  font-family: 'Encode Sans Expanded', sans-serif; }
+
+nav {
+  min-height: 70px; }
+  nav .bg {
+    background-color: #091e2b;
+    transition: opacity .4s;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; }
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 100;
+  font-family: 'Heebo', sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s; }
+  .navbar-brand span {
+    font-weight: 900; }
+  @media only screen and (max-width: 475px) {
+    .navbar-brand {
+      font-size: 20px; } }
+
+.nav-link {
+  display: inline-block; }
+
+.nav-item,
+.nav-link {
+  line-height: 1.65em; }
+
 .welcome {
   background: linear-gradient(rgba(4, 31, 49, 0.85), rgba(4, 4, 4, 0.9)), url(../img/bg.jpg) 50% 50%;
   background-size: cover;
@@ -102,7 +156,7 @@ section {
   .welcome_desc:before, .welcome_desc:after {
     font-weight: 600;
     position: relative;
-    top: .1em;
+    top: 5%;
     font-size: 1.65em;
     color: yellow;
     padding: 0 15px;
@@ -154,7 +208,7 @@ section {
 
 .about_description {
   padding: 20px 12px;
-  line-height: 1.75rem;
+  line-height: 1.65rem;
   font-family: 'Encode Sans Expanded', sans-serif; }
 
 .portfolio {
@@ -213,7 +267,7 @@ section {
   .portfolio_project_details h4:before, .portfolio_project_details h4:after {
     font-weight: 600;
     position: relative;
-    top: .1em;
+    top: 5%;
     font-size: 1.65em;
     color: yellow;
     padding: 0 15px;
@@ -275,8 +329,9 @@ section {
   @media only screen and (max-width: 767.99px) {
     .contact .wrapper {
       flex-direction: column; } }
-  .contact .form {
-    margin-top: 35px; }
+  @media only screen and (max-width: 767.99px) {
+    .contact .form {
+      margin-top: 35px; } }
   .contact .form-column input,
   .contact .form-column textarea {
     width: 100%;

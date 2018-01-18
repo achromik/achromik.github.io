@@ -1,6 +1,6 @@
 // @import url('https://fonts.googleapis.com/css?family=Heebo:100,900|Encode+Sans+Expanded:300,400,600')
 
-@import url('https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i&subset=latin-ext|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600')
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:700i|Montserrat:400,700|Noto+Serif:400i|Roboto+Slab:400,700|Heebo:100,900|Encode+Sans+Expanded:300,400,600&subset=latin-ext')
 
 $main-color: #fed136
 $darker-bg-color:  #f7f7f7
@@ -35,7 +35,8 @@ $faded-text-color: #636363
     &:after
         font-weight: $weight
         position: relative
-        top: .1em
+        // top: .1em
+        top: 5%
         font-size: 1.65em
         color: $color
         padding: 0 15px
@@ -75,7 +76,7 @@ $faded-text-color: #636363
       font-weight: normal
       font-style: normal
 html
-    font-size: 14px
+    font-size: 15px
 
 * 
     margin: 0
@@ -128,6 +129,52 @@ section
 //     background-size: cover
 //     height: 100vh
 //     font-family: 'Encode Sans Expanded', sans-serif  
+
+.visible
+    opacity: 1!important
+
+.active
+    .nav-link
+        color: #31c2e4!important
+    @include brackets(curly, 600, yellow)
+
+
+
+nav
+    min-height: 70px
+    .bg
+        background-color: #091e2b 
+        transition: opacity .4s
+        opacity: 0
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: -1
+    // @include screen(mobile)
+    
+
+
+.navbar-brand
+    font-size: 30px
+    font-weight: 100
+    font-family: 'Heebo', sans-serif
+    visibility: hidden
+    opacity: 0
+    transition: .4s
+    span
+        font-weight: 900
+    @include screen(mobile)
+        font-size: 20px
+
+.nav-link
+    display: inline-block
+.nav-item,
+.nav-link
+    line-height: 1.65em        
+
+
 
 .welcome
     // @include flex
@@ -211,7 +258,7 @@ section
 
 .about_description
     padding: 20px 12px   
-    line-height: 1.75rem 
+    line-height: 1.65rem 
     font-family: 'Encode Sans Expanded', sans-serif  
 
 .portfolio
@@ -351,7 +398,8 @@ section
         @include screen('(max-width: 767.99px)')
             flex-direction: column
     .form
-        margin-top: 35px
+        @include screen('(max-width: 767.99px)')
+            margin-top: 35px
     .form-column
         input,
         textarea
