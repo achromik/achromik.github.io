@@ -66,7 +66,10 @@ section {
 .active .nav-link {
   color: #31c2e4 !important; }
   .active .nav-link span {
-    transform: translateY(-33%); }
+    transform: translateY(-33%);
+    font-weight: 600;
+    font-family: 'Encode Sans Expanded', sans-serif;
+    text-transform: lowercase; }
     .active .nav-link span:before {
       content: '{'; }
     .active .nav-link span:after {
@@ -84,7 +87,6 @@ nav {
   min-height: 70px; }
   nav .bg {
     background-color: #091e2b;
-    transition: opacity .4s;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -215,7 +217,7 @@ nav {
     .about_image {
       width: 30vw;
       min-width: 180px; } }
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 767.99px) {
     .about_image {
       display: none; } }
 

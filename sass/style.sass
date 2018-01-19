@@ -31,6 +31,12 @@ $faded-text-color: #636363
         &:after
             content: ']' 
 
+    @else if $type == angle
+        &:before
+            content: '<'
+        &:after
+            content: '/>' 
+
     &:before,        
     &:after
         font-weight: $weight
@@ -139,6 +145,9 @@ section
         span
             transform: translateY(-33%);
             @include brackets(curly, 600, yellow)
+            font-weight: 600
+            font-family: 'Encode Sans Expanded', sans-serif 
+            text-transform: lowercase
 
 
 
@@ -146,7 +155,6 @@ nav
     min-height: 70px
     .bg
         background-color: #091e2b 
-        transition: opacity .4s
         opacity: 0
         position: absolute
         top: 0
@@ -269,7 +277,7 @@ nav
     @include screen('tablet')
         width: 30vw
         min-width: 180px
-    @include screen('(max-width: 575.99px)')   
+    @include screen('(max-width: 767.99px)')   
         display: none 
 
 .about_description

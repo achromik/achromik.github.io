@@ -3,6 +3,8 @@ var target = location.hash,
     offset = $('nav').outerHeight();
 
 (function () {
+    changeMenuVisibility();
+
     var win = $('html, body');
 
     if (target) {
@@ -68,6 +70,8 @@ function waypoints() {
     //Do magic on scroll
     $(window).on('scroll', function () {
 
+
+
         changeMenuVisibility();
 
         // Get container scroll position
@@ -99,7 +103,14 @@ function waypoints() {
 
 function changeMenuVisibility() {
     var $navbarBrand = $('.navbar-brand');
-    if ($(window).scrollTop() > $(window).height() - 2 * offset) {
+    if (($(window).scrollTop() < 10) || ($(window).scrollTop() >= $(window).height() - 2 * offset))  {
+        $('nav').slideDown(400);
+    } else if (($(window).scrollTop() >= 10) && ($(window).scrollTop() < $(window).height() - 2 * offset)) {
+        $('nav').slideUp(400);
+    }
+
+
+    if ($(window).scrollTop() >= $(window).height() - 2 * offset) {
         $('.bg').addClass('visible');
         $navbarBrand.addClass('visible');
     } else {
@@ -137,21 +148,3 @@ function handleFormSubmit() {
     });
 
 }
-
-
-
-(function () {
-    changeMenuVisibility();
-
-
-
-    // $(window).scroll(function () {
-    //     changeMenuVisibility();
-    // });
-
-
-
-
-
-
-})();
