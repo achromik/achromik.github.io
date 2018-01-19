@@ -85,6 +85,9 @@ section {
 
 nav {
   min-height: 70px; }
+  @media only screen and (max-width: 991.99px) {
+    nav {
+      min-height: unset; } }
   nav .bg {
     background-color: #091e2b;
     opacity: 0;

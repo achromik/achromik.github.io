@@ -19,9 +19,9 @@ var target = location.hash,
     }
 
     //collapse menu bar if click on menu item
-    $('nav').on('click','.navbar-collapse.show', function(event) {
+    $('nav').on('click', '.navbar-collapse.show', function (event) {
         console.log(event.target);
-        if(  $(event.target).is('a') ) {
+        if ($(event.target).is('a')) {
             $(this).collapse('hide');
         }
     });
@@ -30,12 +30,12 @@ var target = location.hash,
     $('.nav-item .nav-link[href^="#"]').each(function () {
         var target = $($(this).attr('href'));
 
-        
+
 
         $(this).click(function () {
-            timeout = setTimeout(function() {
+            timeout = setTimeout(function () {
                 $('.navbar-collapse.show').collapse('hide');
-            },800);
+            }, 800);
             win.stop().animate({ scrollTop: target.offset().top - offset }, 600);
             return false;
         });
@@ -103,10 +103,15 @@ function waypoints() {
 
 function changeMenuVisibility() {
     var $navbarBrand = $('.navbar-brand');
-    if (($(window).scrollTop() < 10) || ($(window).scrollTop() >= $(window).height() - 2 * offset))  {
+    if ($(window).width() > 767.99) {
+        if (($(window).scrollTop() < 10) || ($(window).scrollTop() >= $(window).height() - 2 * offset)) {
+            $('nav').slideDown(400);
+        } else if (($(window).scrollTop() >= 10) && ($(window).scrollTop() < $(window).height() - 2 * offset)) {
+            $('nav').slideUp(400);
+        }
+    }
+    else {
         $('nav').slideDown(400);
-    } else if (($(window).scrollTop() >= 10) && ($(window).scrollTop() < $(window).height() - 2 * offset)) {
-        $('nav').slideUp(400);
     }
 
 
