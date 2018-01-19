@@ -103,6 +103,7 @@ function waypoints() {
 
 function changeMenuVisibility() {
     var $navbarBrand = $('.navbar-brand');
+    
     if ($(window).width() > 767.99) {
         if (($(window).scrollTop() < 10) || ($(window).scrollTop() >= $(window).height() - 2 * offset)) {
             $('nav').slideDown(400);
